@@ -77,12 +77,12 @@ jobs:
           context: ./apps/app/build/docker/
           file: ./apps/app/build/docker/Dockerfile
           push: false
-          tags: ghcr.io/acosta/kmp-template:latest
+          tags: ghcr.io/yacosta738/kmp-template:latest
       - name: 🔍 🪪 Scan container using trivy
         id: scan
         uses: azure/container-scan@v0
         with:
-          image-name: ghcr.io/acosta/kmp-template:latest
+          image-name: ghcr.io/yacosta738/kmp-template:latest
 
   release:
     name: 🚀 Release
@@ -144,8 +144,8 @@ jobs:
           file: ./apps/app/build/docker/Dockerfile
           push: true
           tags: |
-            ghcr.io/acosta/kmp-template:latest
-            ghcr.io/acosta/kmp-template:${{ needs.release.outputs.revnumber }}
+            ghcr.io/yacosta738/kmp-template:latest
+            ghcr.io/yacosta738/kmp-template:${{ needs.release.outputs.revnumber }}
 
   publish-docs:
     name: 🔵 📄 Publish Docs
