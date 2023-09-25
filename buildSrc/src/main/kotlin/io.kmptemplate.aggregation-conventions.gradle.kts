@@ -39,7 +39,9 @@ subprojects {
     }
 
     if (this.name != "documentation") {
-        val reportsDir = this.layout.buildDirectory.dir("reports/detekt/detekt.xml").get().asFile.absolutePath
+        val reportsDir =
+            this.layout.buildDirectory.dir("reports/detekt/detekt.xml")
+                .get().asFile.absolutePath
         val baseDir = this.projectDir
 
         val sonarTestSources = mutableListOf<String>()

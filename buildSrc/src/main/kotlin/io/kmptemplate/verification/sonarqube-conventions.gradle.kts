@@ -7,8 +7,8 @@ plugins {
     id("org.sonarqube")
 }
 
-val github_org: String by project
-val github_project_url = "https://github.com/${github_org}/${rootProject.name}"
+val githubOrg: String by project
+val githubProjectUrl = "https://github.com/${githubOrg}/${rootProject.name}"
 
 sonar {
     properties {
@@ -16,16 +16,19 @@ sonar {
         property("sonar.sourceEncoding", "UTF-8")
         property("sonar.projectName", rootProject.name)
         property("sonar.projectKey", System.getenv()["SONAR_PROJECT_KEY"] ?: rootProject.name)
-        property("sonar.organization", System.getenv()["SONAR_ORGANIZATION"] ?: github_org)
+        property("sonar.organization", System.getenv()["SONAR_ORGANIZATION"] ?: githubOrg)
         property("sonar.projectVersion", rootProject.version.toString())
         property("sonar.host.url", System.getenv()["SONAR_HOST_URL"] ?: "https://sonarcloud.io")
-        property("sonar.login", System.getenv()["SONAR_TOKEN"] ?: "" )
+        property("sonar.login", System.getenv()["SONAR_TOKEN"] ?: "")
         property("sonar.scm.provider", "git")
-        property("sonar.links.homepage", github_project_url)
-        property("sonar.links.ci", "$github_project_url/actions")
-        property("sonar.links.scm", github_project_url)
-        property("sonar.links.issue", "$github_project_url/issues")
-        property("sonar.coverage.jacoco.xmlReportPaths", layout.buildDirectory.dir("reports/jacoco/aggregateJacocoTestReport/aggregateJacocoTestReport.xml"))
+        property("sonar.links.homepage", githubProjectUrl)
+        property("sonar.links.ci", "$githubProjectUrl/actions")
+        property("sonar.links.scm", githubProjectUrl)
+        property("sonar.links.issue", "$githubProjectUrl/issues")
+        property(
+            "sonar.coverage.jacoco.xmlReportPaths",
+            layout.buildDirectory.dir("reports/jacoco/aggregateJacocoTestReport/aggregateJacocoTestReport.xml")
+        )
     }
 }
 
