@@ -166,4 +166,4 @@ The class StringUtils only contains utility functions. Consider defining it as a
 
 ```
 
-generated with [detekt version 1.23.1](https://detekt.dev/) on 2023-09-25 16:27:35 UTC
+generated with [detekt version 1.23.1](https://detekt.dev/) on 2023-09-25 21:40:34 UTC
