@@ -4,7 +4,9 @@
 package io.kmptemplate.list
 
 import assertk.assertThat
-import assertk.assertions.*
+import assertk.assertions.isEqualTo
+import assertk.assertions.isTrue
+import assertk.assertions.isFalse
 import mu.KotlinLogging
 import kotlin.test.Test
 
@@ -12,12 +14,14 @@ private val logger = KotlinLogging.logger {}
 
 class LinkedListTest {
 
-    @Test fun testConstructor() {
+    @Test
+    fun testConstructor() {
         val list = LinkedList()
         assertThat(list.size()).isEqualTo(0)
     }
 
-    @Test fun testAdd() {
+    @Test
+    fun testAdd() {
         val list = LinkedList()
 
         logger.debug { "Just a test for log messages" }
@@ -31,7 +35,8 @@ class LinkedListTest {
         assertThat(list.get(1)).isEqualTo("two")
     }
 
-    @Test fun testRemove() {
+    @Test
+    fun testRemove() {
         val list = LinkedList()
 
         list.add("one")
@@ -45,7 +50,8 @@ class LinkedListTest {
         assertThat(list.size()).isEqualTo(0)
     }
 
-    @Test fun testRemoveMissing() {
+    @Test
+    fun testRemoveMissing() {
         val list = LinkedList()
 
         list.add("one")
