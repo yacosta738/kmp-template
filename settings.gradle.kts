@@ -1,6 +1,6 @@
 import org.gradle.kotlin.dsl.support.listFilesOrdered
 
-rootProject.name = "KMPTemplate"
+rootProject.name = "kmp-template"
 
 pluginManagement {
     repositories {
