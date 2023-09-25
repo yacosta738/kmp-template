@@ -1,0 +1,9 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:app
+io.kmptemplate.app
+module:list
+io.kmptemplate.list
+module:utilities
+io.kmptemplate.utilities

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="4.3">
+<file name="/home/runner/work/kmp-template/kmp-template/shared/list/src/testIntegration/kotlin/io/kmptemplate/InternalDummyClassTest.kt">
+	<error line="10" column="9" severity="warning" message="Function names should match the pattern: [a-z][a-zA-Z0-9]*" source="detekt.FunctionNaming" />
+	<error line="18" column="9" severity="warning" message="Function names should match the pattern: [a-z][a-zA-Z0-9]*" source="detekt.FunctionNaming" />
+</file>
+<file name="/home/runner/work/kmp-template/kmp-template/apps/app/src/main/kotlin/io/kmptemplate/app/MessageUtils.kt">
+	<error line="8" column="13" severity="warning" message="getMessage is returning a constant. Prefer declaring a constant instead." source="detekt.FunctionOnlyReturningConstant" />
+	<error line="6" column="1" severity="warning" message="The class MessageUtils only contains utility functions. Consider defining it as an object." source="detekt.UtilityClassWithPublicConstructor" />
+</file>
+<file name="/home/runner/work/kmp-template/kmp-template/shared/utilities/src/main/kotlin/io/kmptemplate/utilities/JoinUtils.kt">
+	<error line="8" column="1" severity="warning" message="The class JoinUtils only contains utility functions. Consider defining it as an object." source="detekt.UtilityClassWithPublicConstructor" />
+</file>
+<file name="/home/runner/work/kmp-template/kmp-template/shared/utilities/src/main/kotlin/io/kmptemplate/utilities/StringUtils.kt">
+	<error line="8" column="1" severity="warning" message="The class StringUtils only contains utility functions. Consider defining it as an object." source="detekt.UtilityClassWithPublicConstructor" />
+</file>
+<file name="/home/runner/work/kmp-template/kmp-template/shared/utilities/src/main/kotlin/io/kmptemplate/utilities/SplitUtils.kt">
+	<error line="8" column="1" severity="warning" message="The class SplitUtils only contains utility functions. Consider defining it as an object." source="detekt.UtilityClassWithPublicConstructor" />
+</file>
+</checkstyle>
