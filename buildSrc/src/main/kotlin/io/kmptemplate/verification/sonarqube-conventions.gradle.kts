@@ -25,7 +25,7 @@ sonar {
         property("sonar.links.ci", "$github_project_url/actions")
         property("sonar.links.scm", github_project_url)
         property("sonar.links.issue", "$github_project_url/issues")
-        property("sonar.coverage.jacoco.xmlReportPaths", buildDir.resolve("reports/jacoco/aggregateJacocoTestReport/aggregateJacocoTestReport.xml"))
+        property("sonar.coverage.jacoco.xmlReportPaths", layout.buildDirectory.dir("reports/jacoco/aggregateJacocoTestReport/aggregateJacocoTestReport.xml"))
     }
 }
 
