@@ -39,7 +39,7 @@ subprojects {
     }
 
     if (this.name != "documentation") {
-        val reportsDir = this.buildDir.resolve("reports/detekt/detekt.xml").absolutePath
+        val reportsDir = this.layout.buildDirectory.dir("reports/detekt/detekt.xml").get().asFile.absolutePath
         val baseDir = this.projectDir
 
         val sonarTestSources = mutableListOf<String>()
@@ -61,20 +61,21 @@ subprojects {
     }
 }
 
-dependencyCheck {
-    failBuildOnCVSS = 3F
-    formats = listOf(ReportGenerator.Format.HTML,
-        ReportGenerator.Format.JUNIT, ReportGenerator.Format.XML, ReportGenerator.Format.SARIF)
+configure<org.owasp.dependencycheck.gradle.extension.DependencyCheckExtension> {
+    failBuildOnCVSS = 9F
+    formats = listOf(
+        ReportGenerator.Format.HTML.toString(),
+        ReportGenerator.Format.JUNIT.toString(),
+        ReportGenerator.Format.XML.toString(),
+        ReportGenerator.Format.SARIF.toString()
+    )
     suppressionFile = "${rootProject.rootDir}/config/owasp/owasp-supression.xml"
 
     // remove plugin dependencies, for configs see
     // https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_plugin_and_dependency_management
     val validConfigurations = listOf("compileClasspath", "runtimeClasspath", "default")
     scanConfigurations = configurations.names
-            .filter { validConfigurations.contains(it) }
-            .toList()
-
-    outputDirectory = buildDir
-        .resolve("reports")
-        .resolve("owasp").path
+        .filter { validConfigurations.contains(it) }
+        .toList()
+    outputDirectory = layout.buildDirectory.dir("reports/owasp").get().asFile.absolutePath
 }
