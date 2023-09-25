@@ -41,5 +41,5 @@ dependencies {
     }
     implementation("org.owasp:dependency-check-gradle:8.4.0")
     implementation("org.asciidoctor:asciidoctor-gradle-jvm:4.0.0-alpha.1")
-    implementation("com.bmuschko:gradle-docker-plugin:9.1.0")
+    implementation("com.bmuschko:gradle-docker-plugin:9.3.3")
 }
