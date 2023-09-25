@@ -53,7 +53,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
 
     // Add additonal dependencies useful for development
-    implementation("io.github.microutils:kotlin-logging:3.0.4")
+    implementation("io.github.microutils:kotlin-logging:3.0.5")
     testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.25")
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
