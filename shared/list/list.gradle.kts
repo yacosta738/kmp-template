@@ -1,5 +1,5 @@
 plugins {
-    id("org.javafreedom.kotlin-library-conventions")
+    id("io.kmptemplate.kotlin-library-conventions")
 }
 
 dependencies {

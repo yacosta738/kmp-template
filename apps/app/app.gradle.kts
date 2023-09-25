@@ -1,5 +1,5 @@
 plugins {
-    id("org.javafreedom.kotlin-application-conventions")
+    id("io.kmptemplate.kotlin-application-conventions")
 }
 
 dependencies {
@@ -9,5 +9,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("org.javafreedom.app.AppKt")
+    mainClass.set("io.kmptemplate.app.AppKt")
 }

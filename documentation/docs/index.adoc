@@ -44,14 +44,14 @@ https://gradle.org/install/[Gradle Install].
 
 After installing gradle, we are going to create a first small project via
 
-`gradle init --type kotlin-application --dsl kotlin --split-project --project-name gradle-by-example --package org.javafreedom`
+`gradle init --type kotlin-application --dsl kotlin --split-project --project-name gradle-by-example --package io.kmptemplate`
 
 For a full description of those parameters please refer to https://docs.gradle.org/current/userguide/build_init_plugin.html[Gradle Build Init Plugin].
 
 The above command-line will setup a small project with the type `kotlin-application`, which contains all required components for a kotlin command-line
 application. Some sub-modules are generated via the `split-project` parameter. The project-name is usually taken from the name of the directory. To be able to be
 independent of the current directory, we do provide the project-name (`project-name`). The used package is the one used for this example project
-(`package org.javafreedom`). All of those values can be adopted to your personal taste, obviously. The used dsl is kotlin, which will provide us
+(`package io.kmptemplate`). All of those values can be adopted to your personal taste, obviously. The used dsl is kotlin, which will provide us
 with *.gradle.kts files instead of the default groovy *.gradle files.
 
 Since we are using the project-type kotlin-application, the pre-configured test-framework is kotlin.test and, quite obviously, the used language is kotlin.
@@ -117,9 +117,9 @@ I decided to add the following default dependencies for all kotlin sub-modules:
 The common-convention contains now all the above mentioned additional dependencies. To show off, that those dependencies are
 added to the modules, inside the list-module the Class LinkedListTest contains now statements from those dependencies.
 
-The following code snippet shows the additions to the org.javafreedom.kotlin-common-conventions.gradle.kts.
+The following code snippet shows the additions to the io.kmptemplate.kotlin-common-conventions.gradle.kts.
 
-.https://github.com/triplem/gradle-by-example/blob/main/buildSrc/src/main/kotlin/org.javafreedom.kotlin-common-conventions.gradle.kts[org.javafreedom.kotlin-common-conventions.gradle.kts]
+.https://github.com/triplem/gradle-by-example/blob/main/buildSrc/src/main/kotlin/io.kmptemplate.kotlin-common-conventions.gradle.kts[io.kmptemplate.kotlin-common-conventions.gradle.kts]
 [source,kotlin]
 ----
 // Add additonal dependencies useful for development
@@ -164,7 +164,7 @@ implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.4.20") {
 
 The dokka plugin is then added to the Common-Convention to be able to use this plugin in each kotlin module.
 
-.https://github.com/triplem/gradle-by-example/blob/main/buildSrc/src/main/kotlin/org.javafreedom.kotlin-common-conventions.gradle.kts[org.javafreedom.kotlin-common-conventions.gradle.kts]
+.https://github.com/triplem/gradle-by-example/blob/main/buildSrc/src/main/kotlin/io.kmptemplate.kotlin-common-conventions.gradle.kts[io.kmptemplate.kotlin-common-conventions.gradle.kts]
 [source,kotlin]
 ----
 plugins {
@@ -288,7 +288,7 @@ https://detekt.github.io/detekt/[detekt] is a kotlin specific code-analysis tool
 
 The following configuration is added to each sub-module and generates the detekt report for those.
 
-.https://github.com/triplem/gradle-by-example/blob/main/buildSrc/src/main/kotlin/org.javafreedom.kotlin-common-conventions.gradle.kts[kotlin-common-conventions.gradle.kts]
+.https://github.com/triplem/gradle-by-example/blob/main/buildSrc/src/main/kotlin/io.kmptemplate.kotlin-common-conventions.gradle.kts[kotlin-common-conventions.gradle.kts]
 [source,kotlin]
 ----
 detekt {
@@ -307,7 +307,7 @@ detekt {
 Since the generated results should get aggregated as well, we do need to add some configuration into the
 root-project. This is done by using the aggregation-convention.
 
-.https://github.com/triplem/gradle-by-example/blob/main/buildSrc/src/main/kotlin/org.javafreedom.aggregation-conventions.gradle.kts[org.javafreedom.aggregation-conventions.gradle.kts]
+.https://github.com/triplem/gradle-by-example/blob/main/buildSrc/src/main/kotlin/io.kmptemplate.aggregation-conventions.gradle.kts[io.kmptemplate.aggregation-conventions.gradle.kts]
 [source,kotlin]
 ----
 val aggregateDetektTask = tasks.register<Detekt>("aggregateDetekt") {

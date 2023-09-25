@@ -1,3 +1,3 @@
 plugins {
-    id("org.javafreedom.documentation.asciidoc-producer-conventions")
+    id("io.kmptemplate.documentation.asciidoc-producer-conventions")
 }

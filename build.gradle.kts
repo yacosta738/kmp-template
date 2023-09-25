@@ -2,17 +2,17 @@ plugins {
     id("org.jetbrains.dokka")
 
     // due to late-binding not working, aggregation should define tasks doc-consumer
-    id("org.javafreedom.aggregation-conventions")
+    id("io.kmptemplate.aggregation-conventions")
 
-    id("org.javafreedom.verification.jacoco-consumer-conventions")
-    id("org.javafreedom.verification.test-consumer-conventions")
-    id("org.javafreedom.documentation.documentation-consumer-conventions")
+    id("io.kmptemplate.verification.jacoco-consumer-conventions")
+    id("io.kmptemplate.verification.test-consumer-conventions")
+    id("io.kmptemplate.documentation.documentation-consumer-conventions")
 
-    id("org.javafreedom.verification.sonarqube-conventions")
+    id("io.kmptemplate.verification.sonarqube-conventions")
 }
 
 allprojects {
-    group = "org.javafreedom.gradle"
+    group = "io.kmptemplate.gradle"
 }
 
 repositories {
