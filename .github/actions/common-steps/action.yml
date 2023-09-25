@@ -1,0 +1,16 @@
+name: Common Steps
+
+description: Common steps for Katana workflows
+
+runs:
+  using: composite
+  steps:
+    - name: ⚙️Setup Java ☕
+      uses: actions/setup-java@v3.13.0
+      with:
+        distribution: temurin
+        java-version: 17
+    - name: ⚙️Setup Gradle 🐘
+      uses: gradle/gradle-build-action@v2.8.0
+      with:
+        dependency-graph: generate-and-submit
