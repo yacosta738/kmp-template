@@ -5,15 +5,13 @@ package io.kmptemplate.utilities
 
 import io.kmptemplate.list.LinkedList
 
-<span class="nc" id="L8">class StringUtils {</span>
-    companion object {
-        fun join(source: LinkedList): String {
-<span class="nc" id="L11">            return JoinUtils.join(source)</span>
-        }
+object StringUtils {
+    fun join(source: LinkedList): String {
+<span class="nc" id="L10">        return JoinUtils.join(source)</span>
+    }
 
-        fun split(source: String): LinkedList {
-<span class="nc" id="L15">            return SplitUtils.split(source)</span>
-        }
+    fun split(source: String): LinkedList {
+<span class="nc" id="L14">        return SplitUtils.split(source)</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

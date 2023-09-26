@@ -157,9 +157,9 @@
 
 <div>
   <ul>
-    <li>28 number of properties</li>
+    <li>29 number of properties</li>
     <li>22 number of functions</li>
-    <li>12 number of classes</li>
+    <li>8 number of classes</li>
     <li>4 number of packages</li>
     <li>12 number of kt files</li>
   </ul>
@@ -170,116 +170,25 @@
 
 <div>
   <ul>
-    <li>329 lines of code (loc)</li>
-    <li>227 source lines of code (sloc)</li>
-    <li>148 logical lines of code (lloc)</li>
+    <li>323 lines of code (loc)</li>
+    <li>220 source lines of code (sloc)</li>
+    <li>145 logical lines of code (lloc)</li>
     <li>25 comment lines of code (cloc)</li>
     <li>38 cyclomatic complexity (mcc)</li>
     <li>20 cognitive complexity</li>
-    <li>7 number of total code smells</li>
+    <li>0 number of total code smells</li>
     <li>11% comment source ratio</li>
-    <li>256 mcc per 1,000 lloc</li>
-    <li>47 code smells per 1,000 lloc</li>
+    <li>262 mcc per 1,000 lloc</li>
+    <li>0 code smells per 1,000 lloc</li>
   </ul>
 </div>
 
 
 <h2>Findings</h2>
-<div>Total: 7
-  <h3>naming: 2</h3>
-  <details id="FunctionNaming" open="open">
-    <summary class="rule-container"><span class="rule">FunctionNaming: 2 </span><span class="description">Function names should follow the naming convention set in the configuration.</span></summary>
-<a href="https://detekt.dev/docs/rules/naming#functionnaming">Documentation</a>
-    <ul>
-      <li><span class="location">/home/runner/work/kmp-template/kmp-template/shared/list/src/testIntegration/kotlin/io/kmptemplate/InternalDummyClassTest.kt:10:9</span><span class="message">Function names should match the pattern: [a-z][a-zA-Z0-9]*</span>
-        <pre><code><span class="lineno">   7 </span>class InternalDummyClassTest {
-<span class="lineno">   8 </span>
-<span class="lineno">   9 </span>    @Test
-<span class="lineno">  10 </span>    fun <span class="error">testInternalDummyClass_AllProperties</span>() {
-<span class="lineno">  11 </span>        val dummy = InternalDummyClass(name = &quot;name&quot;, nick = &quot;nick&quot;)
-<span class="lineno">  12 </span>
-<span class="lineno">  13 </span>        assertThat(dummy.name).isEqualTo(&quot;name&quot;)
-</code></pre>
-      </li>
-      <li><span class="location">/home/runner/work/kmp-template/kmp-template/shared/list/src/testIntegration/kotlin/io/kmptemplate/InternalDummyClassTest.kt:18:9</span><span class="message">Function names should match the pattern: [a-z][a-zA-Z0-9]*</span>
-        <pre><code><span class="lineno">  15 </span>    }
-<span class="lineno">  16 </span>
-<span class="lineno">  17 </span>    @Test
-<span class="lineno">  18 </span>    fun <span class="error">testInternalDummyClass_DefaultProperties</span>() {
-<span class="lineno">  19 </span>        val dummy = InternalDummyClass(name = &quot;name&quot;)
-<span class="lineno">  20 </span>
-<span class="lineno">  21 </span>        assertThat(dummy.name).isEqualTo(&quot;name&quot;)
-</code></pre>
-      </li>
-    </ul>
-  </details>
-  <h3>style: 5</h3>
-  <details id="FunctionOnlyReturningConstant" open="open">
-    <summary class="rule-container"><span class="rule">FunctionOnlyReturningConstant: 1 </span><span class="description">A function that only returns a constant is misleading. Consider declaring a constant instead.</span></summary>
-<a href="https://detekt.dev/docs/rules/style#functiononlyreturningconstant">Documentation</a>
-    <ul>
-      <li><span class="location">/home/runner/work/kmp-template/kmp-template/apps/app/src/main/kotlin/io/kmptemplate/app/MessageUtils.kt:8:13</span><span class="message">getMessage is returning a constant. Prefer declaring a constant instead.</span>
-        <pre><code><span class="lineno">   5 </span>
-<span class="lineno">   6 </span>class MessageUtils {
-<span class="lineno">   7 </span>    companion object {
-<span class="lineno">   8 </span>        fun <span class="error">getMessage</span>(): String = &quot;Hello      World!&quot;
-<span class="lineno">   9 </span>    }
-<span class="lineno">  10 </span>}
-<span class="lineno">  11 </span>
-</code></pre>
-      </li>
-    </ul>
-  </details>
-  <details id="UtilityClassWithPublicConstructor" open="open">
-    <summary class="rule-container"><span class="rule">UtilityClassWithPublicConstructor: 4 </span><span class="description">The class declaration is unnecessary because it only contains utility functions. An object declaration should be used instead.</span></summary>
-<a href="https://detekt.dev/docs/rules/style#utilityclasswithpublicconstructor">Documentation</a>
-    <ul>
-      <li><span class="location">/home/runner/work/kmp-template/kmp-template/apps/app/src/main/kotlin/io/kmptemplate/app/MessageUtils.kt:6:1</span><span class="message">The class MessageUtils only contains utility functions. Consider defining it as an object.</span>
-        <pre><code><span class="lineno">   3 </span> */
-<span class="lineno">   4 </span>package io.kmptemplate.app
-<span class="lineno">   5 </span>
-<span class="lineno">   6 </span><span class="error">class MessageUtils {</span>
-<span class="lineno">   7 </span><span class="error">    companion object {</span>
-<span class="lineno">   8 </span><span class="error">        fun getMessage(): String = &quot;Hello      World!&quot;</span>
-<span class="lineno">   9 </span><span class="error">    }</span>
-</code></pre>
-      </li>
-      <li><span class="location">/home/runner/work/kmp-template/kmp-template/shared/utilities/src/main/kotlin/io/kmptemplate/utilities/JoinUtils.kt:8:1</span><span class="message">The class JoinUtils only contains utility functions. Consider defining it as an object.</span>
-        <pre><code><span class="lineno">   5 </span>
-<span class="lineno">   6 </span>import io.kmptemplate.list.LinkedList
-<span class="lineno">   7 </span>
-<span class="lineno">   8 </span><span class="error">class JoinUtils {</span>
-<span class="lineno">   9 </span><span class="error">    companion object {</span>
-<span class="lineno">  10 </span><span class="error">        fun join(source: LinkedList): String {</span>
-<span class="lineno">  11 </span><span class="error">            val result = StringBuilder()</span>
-</code></pre>
-      </li>
-      <li><span class="location">/home/runner/work/kmp-template/kmp-template/shared/utilities/src/main/kotlin/io/kmptemplate/utilities/SplitUtils.kt:8:1</span><span class="message">The class SplitUtils only contains utility functions. Consider defining it as an object.</span>
-        <pre><code><span class="lineno">   5 </span>
-<span class="lineno">   6 </span>import io.kmptemplate.list.LinkedList
-<span class="lineno">   7 </span>
-<span class="lineno">   8 </span><span class="error">class SplitUtils {</span>
-<span class="lineno">   9 </span><span class="error">    companion object {</span>
-<span class="lineno">  10 </span><span class="error">        fun split(source: String): LinkedList {</span>
-<span class="lineno">  11 </span><span class="error">            var lastFind = 0</span>
-</code></pre>
-      </li>
-      <li><span class="location">/home/runner/work/kmp-template/kmp-template/shared/utilities/src/main/kotlin/io/kmptemplate/utilities/StringUtils.kt:8:1</span><span class="message">The class StringUtils only contains utility functions. Consider defining it as an object.</span>
-        <pre><code><span class="lineno">   5 </span>
-<span class="lineno">   6 </span>import io.kmptemplate.list.LinkedList
-<span class="lineno">   7 </span>
-<span class="lineno">   8 </span><span class="error">class StringUtils {</span>
-<span class="lineno">   9 </span><span class="error">    companion object {</span>
-<span class="lineno">  10 </span><span class="error">        fun join(source: LinkedList): String {</span>
-<span class="lineno">  11 </span><span class="error">            return JoinUtils.join(source)</span>
-</code></pre>
-      </li>
-    </ul>
-  </details>
-</div>
+<div>Total: 0</div>
 
 
-generated with <a href="https://detekt.dev/">detekt version 1.23.1</a> on 2023-09-25 21:40:34 UTC.
+generated with <a href="https://detekt.dev/">detekt version 1.23.1</a> on 2023-09-26 13:18:42 UTC.
 
 </body>
 </html>

@@ -5,39 +5,37 @@ package io.kmptemplate.utilities
 
 import io.kmptemplate.list.LinkedList
 
-<span class="nc" id="L8">class SplitUtils {</span>
-    companion object {
-        fun split(source: String): LinkedList {
-<span class="nc" id="L11">            var lastFind = 0</span>
-<span class="nc" id="L12">            val result = LinkedList()</span>
+object SplitUtils {
+    fun split(source: String): LinkedList {
+<span class="nc" id="L10">        var lastFind = 0</span>
+<span class="nc" id="L11">        val result = LinkedList()</span>
 
-<span class="nc" id="L14">            var currentFind = source.indexOf(&quot; &quot;, lastFind)</span>
-<span class="nc bnc" id="L15" title="All 2 branches missed.">            while (currentFind != -1) {</span>
-<span class="nc" id="L16">                var token = source.substring(lastFind)</span>
-<span class="nc bnc" id="L17" title="All 2 branches missed.">                if (currentFind != -1) {</span>
-<span class="nc" id="L18">                    token = token.substring(0, currentFind - lastFind)</span>
-                }
-
-<span class="nc" id="L21">                addIfValid(token, result)</span>
-<span class="nc" id="L22">                lastFind = currentFind + 1</span>
-<span class="nc" id="L23">                currentFind = source.indexOf(&quot; &quot;, lastFind)</span>
+<span class="nc" id="L13">        var currentFind = source.indexOf(&quot; &quot;, lastFind)</span>
+<span class="nc bnc" id="L14" title="All 2 branches missed.">        while (currentFind != -1) {</span>
+<span class="nc" id="L15">            var token = source.substring(lastFind)</span>
+<span class="nc bnc" id="L16" title="All 2 branches missed.">            if (currentFind != -1) {</span>
+<span class="nc" id="L17">                token = token.substring(0, currentFind - lastFind)</span>
             }
 
-<span class="nc" id="L26">            val token = source.substring(lastFind)</span>
-<span class="nc" id="L27">            addIfValid(token, result)</span>
-
-<span class="nc" id="L29">            return result</span>
+<span class="nc" id="L20">            addIfValid(token, result)</span>
+<span class="nc" id="L21">            lastFind = currentFind + 1</span>
+<span class="nc" id="L22">            currentFind = source.indexOf(&quot; &quot;, lastFind)</span>
         }
 
-        private fun addIfValid(token: String, list: LinkedList) {
-<span class="nc bnc" id="L33" title="All 2 branches missed.">            if (isTokenValid(token)) {</span>
-<span class="nc" id="L34">                list.add(token)</span>
-            }
-<span class="nc" id="L36">        }</span>
+<span class="nc" id="L25">        val token = source.substring(lastFind)</span>
+<span class="nc" id="L26">        addIfValid(token, result)</span>
 
-        private fun isTokenValid(token: String): Boolean {
-<span class="nc bnc" id="L39" title="All 2 branches missed.">            return token.isNotEmpty()</span>
+<span class="nc" id="L28">        return result</span>
+    }
+
+    private fun addIfValid(token: String, list: LinkedList) {
+<span class="nc bnc" id="L32" title="All 2 branches missed.">        if (isTokenValid(token)) {</span>
+<span class="nc" id="L33">            list.add(token)</span>
         }
+<span class="nc" id="L35">    }</span>
+
+    private fun isTokenValid(token: String): Boolean {
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        return token.isNotEmpty()</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
