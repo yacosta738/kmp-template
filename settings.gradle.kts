@@ -28,3 +28,7 @@ fun includeProjectsInDir(dirName: String) {
 val projects = listOf("apps", "shared")
 projects.forEach { includeProjectsInDir(it) }
 includeProject(file("documentation"))
+
+enableFeaturePreview("VERSION_CATALOGS")
+enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

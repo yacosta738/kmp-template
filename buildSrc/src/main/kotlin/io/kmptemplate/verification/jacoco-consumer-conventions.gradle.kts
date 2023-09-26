@@ -62,6 +62,8 @@ val aggregateJacocoTestReport by tasks.registering(JacocoReport::class) {
         // other tools like SonarQube, Coveralls or Codecov
         xml.required.set(true)
 
+        csv.required.set(true)
+
         // HTML reports can be used to see code coverage
         // without any external tools
         html.required.set(true)
