@@ -13,7 +13,7 @@ assertk-jvm = "0.24"
 owasp = "8.4.0"
 asciidoctor = "4.0.0-alpha.1"
 gradle-git-properties = "2.4.1"
-docker-plugin = "9.1.0"
+docker-plugin = "9.3.3"
 # Utilities
 apache-commons = "1.10.0"
 kotlin-logging = "3.0.4"
