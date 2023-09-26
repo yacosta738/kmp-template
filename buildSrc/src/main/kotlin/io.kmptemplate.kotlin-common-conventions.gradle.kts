@@ -54,7 +54,7 @@ dependencies {
 
     // Add additonal dependencies useful for development
     implementation("io.github.microutils:kotlin-logging:3.0.4")
-    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.25")
+    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.27.0")
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
 
