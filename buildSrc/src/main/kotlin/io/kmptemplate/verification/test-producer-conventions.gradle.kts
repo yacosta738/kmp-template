@@ -47,13 +47,13 @@ tasks.check {
 
 idea {
     module {
-        val testSources = testSourceDirs
-        testSources.addAll(testIntegration.allJava.srcDirs)
-        testSourceDirs = testSources
+        val testSourceDirs = testSources
+        testSourceDirs.setFrom(testIntegration.allJava.srcDirs)
+        testSources = testSourceDirs
 
-        val testResources = testResourceDirs
-        testResources.addAll(testIntegration.resources.srcDirs)
-        testResourceDirs = testResources
+        val testResourceDirs = testResources
+        testResourceDirs.setFrom(testIntegration.resources.srcDirs)
+        testResources = testResourceDirs
     }
 }
 

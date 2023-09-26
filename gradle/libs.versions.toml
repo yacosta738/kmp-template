@@ -1,0 +1,61 @@
+[versions]
+
+kotlin = "1.9.0"
+dokka = "1.8.20"
+detekt = "1.23.1"
+sonarqubeGradlePlugin = "4.3.1.3277"
+jacoco = "0.8.10"
+#Testing
+mockk = "1.13.7"
+junit = "5.9.3"
+kotest = "5.7.2"
+assertk-jvm = "0.24"
+owasp = "8.4.0"
+asciidoctor = "4.0.0-alpha.1"
+gradle-git-properties = "2.4.1"
+docker-plugin = "9.1.0"
+# Utilities
+apache-commons = "1.10.0"
+kotlin-logging = "3.0.4"
+
+
+[libraries]
+# project dependencies
+
+# buildSrc dependencies (plugins)
+kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin" }
+kotlin-noarg = { module = "org.jetbrains.kotlin:kotlin-noarg", version.ref = "kotlin" }
+dokka-gradle = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+gradle-git-properties = { module = "com.gorylenko.gradle-git-properties:gradle-git-properties", version.ref = "gradle-git-properties" }
+detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+# Utils
+owasp-depcheck = { module = "org.owasp:dependency-check-gradle", version.ref = "owasp" }
+asciidoctor-gradle = { module = "org.asciidoctor:asciidoctor-gradle-jvm", version.ref = "asciidoctor" }
+gradle-docker-plugin = { module = "com.bmuschko:gradle-docker-plugin", version.ref = "docker-plugin" }
+
+# Utilities
+commons-text = { module = "org.apache.commons:commons-text", version.ref = "apache-commons" }
+kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
+
+# test dependencies
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+sonarqube-gradle-plugin = { module = "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin", version.ref = "sonarqubeGradlePlugin" }
+jacoco-core = { module = "org.jacoco:org.jacoco.core", version.ref = "jacoco" }
+kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
+kotest-assertions-json = { module = "io.kotest:kotest-assertions-json", version.ref = "kotest" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+assertk-jvm = { module = "com.willowtreeapps.assertk:assertk-jvm", version.ref = "assertk-jvm" }
+
+
+[bundles]
+
+junit = ["junit-jupiter-api", "junit-jupiter-engine"]
+kotest = ["kotest-assertions-core-jvm", "kotest-assertions-json", "kotest-runner-junit5"]
+
+[plugins]
+
+detekt-gradle = { id = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }

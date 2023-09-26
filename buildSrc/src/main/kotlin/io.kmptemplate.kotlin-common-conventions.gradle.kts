@@ -1,28 +1,19 @@
-import org.jetbrains.kotlin.gradle.tasks.*
-import java.util.Properties
-
-val properties = Properties().also { props ->
-    project.projectDir.resolveSibling("../gradle.properties").bufferedReader().use {
-        props.load(it)
-    }
-}
-val junitVersion: String = properties.getProperty("junitVersion")
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     java
     kotlin("jvm")
     id("org.jetbrains.dokka")
-    id("io.gitlab.arturbosch.detekt")
 
-    // the following conventions depend on each other, keep them in the following order
-    id("io.kmptemplate.verification.test-producer-conventions")
-    id("io.kmptemplate.verification.jacoco-producer-conventions")
+    id("io.kmptemplate.detekt-conventions")
+    id("io.kmptemplate.testing-conventions")
 }
 
 repositories {
     mavenCentral()
 }
 
+val libs: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 // Latest Java LTS Version
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -43,7 +34,7 @@ detekt {
 dependencies {
     constraints {
         // Define dependency versions as constraints
-        implementation("org.apache.commons:commons-text:1.10.0")
+        add("implementation", libs.findLibrary("commons-text").get())
     }
 
     // Align versions of all Kotlin components
@@ -53,14 +44,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
 
     // Add additonal dependencies useful for development
-    implementation("io.github.microutils:kotlin-logging:3.0.4")
-    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.25")
+    add("implementation", libs.findLibrary("kotlin-logging").get())
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
-
-    // Use JUnit Jupiter API for testing.
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-
-    // Use JUnit Jupiter Engine for testing.
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }

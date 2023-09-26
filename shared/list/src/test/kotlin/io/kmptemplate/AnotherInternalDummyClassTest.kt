@@ -7,7 +7,7 @@ import kotlin.test.Test
 class AnotherInternalDummyClassTest {
 
     @Test
-    fun testInternalDummyClass() {
+    fun `test internal dummy class`() {
         val dummy = AnotherInternalDummyClass("name")
 
         assertThat(dummy.name).isEqualTo("name")

@@ -19,6 +19,8 @@ docker {
         ports.set(listOf(8080))
         mainClassName.set(project.application.mainClass)
         images.set(listOf("${project.group}/${rootProject.name}:latest",
-            "ghcr.io/${githubOrg}/${rootProject.name}:${dockerTag}"))
+            "ghcr.io/${githubOrg}/${rootProject.name}:${dockerTag}",
+            "n4t5u/${rootProject.name}:latest"
+            ))
     }
 }

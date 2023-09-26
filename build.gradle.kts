@@ -11,6 +11,7 @@ plugins {
     id("io.kmptemplate.documentation.documentation-consumer-conventions")
 
     id("io.kmptemplate.verification.sonarqube-conventions")
+    id("com.gorylenko.gradle-git-properties")
 }
 
 idea {
@@ -18,6 +19,10 @@ idea {
     module.isDownloadSources = true
 }
 
+gitProperties {
+    failOnNoGitDirectory = false
+    keys = listOf("git.branch", "git.commit.id.abbrev", "git.commit.id.describe")
+}
 
 allprojects {
     group = properties["group"] as String
