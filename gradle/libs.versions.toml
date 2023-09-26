@@ -1,7 +1,7 @@
 [versions]
 
 kotlin = "1.9.0"
-dokka = "1.8.20"
+dokka = "1.9.0"
 detekt = "1.23.1"
 sonarqubeGradlePlugin = "4.3.1.3277"
 jacoco = "0.8.10"
