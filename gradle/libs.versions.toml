@@ -7,7 +7,7 @@ sonarqubeGradlePlugin = "4.3.1.3277"
 jacoco = "0.8.10"
 #Testing
 mockk = "1.13.7"
-junit = "5.9.3"
+junit = "5.10.0"
 kotest = "5.7.2"
 assertk-jvm = "0.24"
 owasp = "8.4.0"
