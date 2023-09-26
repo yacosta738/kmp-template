@@ -3,8 +3,8 @@
  */
 package io.kmptemplate.app
 
-class MessageUtils {
-    companion object {
-        fun getMessage(): String = "Hello      World!"
-    }
+object MessageUtils {
+    private const val message = "Hello      World!"
+    fun getMessage(): String = message
 }
+

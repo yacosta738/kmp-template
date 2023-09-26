@@ -7,7 +7,7 @@ import kotlin.test.Test
 class InternalDummyClassTest {
 
     @Test
-    fun `test internal dummy class all properties`() {
+    fun testInternalDummyClassAllProperties() {
         val dummy = InternalDummyClass(name = "name", nick = "nick")
 
         assertThat(dummy.name).isEqualTo("name")
@@ -15,7 +15,7 @@ class InternalDummyClassTest {
     }
 
     @Test
-    fun `test internal dummy class default properties`() {
+    fun testInternalDummyClassDefaultProperties() {
         val dummy = InternalDummyClass(name = "name")
 
         assertThat(dummy.name).isEqualTo("name")

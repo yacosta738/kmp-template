@@ -5,14 +5,12 @@ package io.kmptemplate.utilities
 
 import io.kmptemplate.list.LinkedList
 
-class StringUtils {
-    companion object {
-        fun join(source: LinkedList): String {
-            return JoinUtils.join(source)
-        }
+object StringUtils {
+    fun join(source: LinkedList): String {
+        return JoinUtils.join(source)
+    }
 
-        fun split(source: String): LinkedList {
-            return SplitUtils.split(source)
-        }
+    fun split(source: String): LinkedList {
+        return SplitUtils.split(source)
     }
 }

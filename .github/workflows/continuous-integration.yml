@@ -74,15 +74,15 @@ jobs:
       - name: 🏗️ 🐳 Build Container Image
         uses: docker/build-push-action@v5
         with:
-          context: ./apps/app/build/docker/
-          file: ./apps/app/build/docker/Dockerfile
-          push: false
-          tags: n4t5u/kmp-template:latest
+            context: ./apps/app/build/docker/
+            file: ./apps/app/build/docker/Dockerfile
+            push: false
+            tags: n4t5u/yacosta738/kmp-template:latest
       - name: 🔍 🪪 Scan container using trivy
         id: scan
         uses: azure/container-scan@v0
         with:
-          image-name: n4t5u/kmp-template:latest
+            image-name: n4t5u/yacosta738/kmp-template:latest
 
   release:
     name: 🚀 Release

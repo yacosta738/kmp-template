@@ -4,8 +4,8 @@ plugins {
     java
     kotlin("jvm")
     id("org.jetbrains.dokka")
-    id("io.gitlab.arturbosch.detekt")
 
+    id("io.kmptemplate.detekt-conventions")
     id("io.kmptemplate.testing-conventions")
 }
 
