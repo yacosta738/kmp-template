@@ -1,6 +1,5 @@
 package io.kmptemplate.verification
 
-import org.gradle.kotlin.dsl.*
 
 plugins {
     java

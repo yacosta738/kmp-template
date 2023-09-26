@@ -27,7 +27,8 @@ sonar {
         property("sonar.links.issue", "$githubProjectUrl/issues")
         property(
             "sonar.coverage.jacoco.xmlReportPaths",
-            layout.buildDirectory.dir("reports/jacoco/aggregateJacocoTestReport/aggregateJacocoTestReport.xml")
+            layout.buildDirectory.file("reports/jacoco/aggregateJacocoTestReport/aggregateJacocoTestReport.xml")
+                .get().asFile.absolutePath
         )
     }
 }
