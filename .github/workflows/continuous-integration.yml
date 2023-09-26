@@ -177,7 +177,7 @@ jobs:
         env:
           revnumber: ${{ needs.release.outputs.revnumber }}
       - name: 🟢 📚 Publish documentation
-        uses: JamesIves/github-pages-deploy-action@v4.2.3
+        uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
