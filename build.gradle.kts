@@ -1,4 +1,6 @@
 plugins {
+    idea
+    base
     id("org.jetbrains.dokka")
 
     // due to late-binding not working, aggregation should define tasks doc-consumer
@@ -10,6 +12,12 @@ plugins {
 
     id("io.kmptemplate.verification.sonarqube-conventions")
 }
+
+idea {
+    module.isDownloadJavadoc = true
+    module.isDownloadSources = true
+}
+
 
 allprojects {
     group = properties["group"] as String
