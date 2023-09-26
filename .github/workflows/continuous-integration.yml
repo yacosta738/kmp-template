@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: 🔄 Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: ⚙️ Common Steps for all jobs
         uses: ./.github/actions/common-steps
@@ -35,7 +35,7 @@ jobs:
 
     steps:
       - name: 🔄 Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: ⚙️ Common Steps for all jobs
         uses: ./.github/actions/common-steps
       - name: 🧪 Run tests
@@ -55,7 +55,7 @@ jobs:
 
     steps:
       - name: 🔄 Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -92,7 +92,7 @@ jobs:
 
     steps:
       - name: 🔄 Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -123,7 +123,7 @@ jobs:
 
     steps:
       - name: 🔄 Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: ⚙️ Common Steps for all jobs
         uses: ./.github/actions/common-steps
@@ -157,7 +157,7 @@ jobs:
 
     steps:
       - name: 🔄 Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: ⚙️ Common Steps for all jobs
