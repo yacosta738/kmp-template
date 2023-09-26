@@ -6,7 +6,7 @@ detekt = "1.23.1"
 sonarqubeGradlePlugin = "4.3.1.3277"
 jacoco = "0.8.10"
 #Testing
-mockk = "1.13.7"
+mockk = "1.13.8"
 junit = "5.10.0"
 kotest = "5.7.2"
 assertk-jvm = "0.27.0"
