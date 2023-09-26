@@ -16,7 +16,7 @@ gradle-git-properties = "2.4.1"
 docker-plugin = "9.3.3"
 # Utilities
 apache-commons = "1.10.0"
-kotlin-logging = "3.0.4"
+kotlin-logging = "3.0.5"
 
 
 [libraries]
