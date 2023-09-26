@@ -44,7 +44,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 📑 Upload documentation results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: documentation
           path: build/documentation
@@ -65,7 +65,7 @@ jobs:
       - name: 🛡️Check OWASP
         run: ./gradlew clean dependencyCheckAnalyze
       - name: ️🛡️⬆️ Upload owasp-report results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: owasp-reports
           path: build/reports/owasp
