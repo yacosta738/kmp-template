@@ -44,6 +44,5 @@ tasks.dokkaHtmlMultiModule.configure {
 }
 
 dependencies {
-    implementation(project(":app"))
     asciidoc(project(":documentation"))
 }

@@ -1,6 +1,6 @@
 name: Common Steps
 
-description: Common steps for Katana workflows
+description: Common steps for KMP Template workflows
 
 runs:
   using: composite
