@@ -1,0 +1,820 @@
+{
+  "version" : 0,
+  "job" : {
+    "id" : "6323180886",
+    "correlator" : "ci_build-tests-3"
+  },
+  "sha" : "f421ca1fbba52f283d7cf2c5e0a8327561d870d3",
+  "ref" : "refs/heads/develop",
+  "detector" : {
+    "name" : "GitHub Dependency Graph Gradle Plugin",
+    "version" : "0.2.0",
+    "url" : "https://github.com/gradle/github-dependency-graph-gradle-plugin"
+  },
+  "manifests" : {
+    "ci_build-tests-3" : {
+      "name" : "ci_build-tests-3",
+      "resolved" : {
+        "org.gradle:github-dependency-graph-gradle-plugin:0.2.0" : {
+          "package_url" : "pkg:maven/org.gradle/github-dependency-graph-gradle-plugin@0.2.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ ]
+        },
+        "org.gradle.kotlin.kotlin-dsl:org.gradle.kotlin.kotlin-dsl.gradle.plugin:4.1.0" : {
+          "package_url" : "pkg:maven/org.gradle.kotlin.kotlin-dsl/org.gradle.kotlin.kotlin-dsl.gradle.plugin@4.1.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.gradle.kotlin:gradle-kotlin-dsl-plugins:4.1.0" ]
+        },
+        "org.gradle.kotlin:gradle-kotlin-dsl-plugins:4.1.0" : {
+          "package_url" : "pkg:maven/org.gradle.kotlin/gradle-kotlin-dsl-plugins@4.1.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0", "org.jetbrains.kotlin:kotlin-sam-with-receiver:1.9.0", "org.jetbrains.kotlin:kotlin-assignment:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-stdlib:1.9.0", "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-stdlib:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-stdlib-common:1.9.0", "org.jetbrains:annotations:13.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-stdlib-common:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains:annotations:13.0" : {
+          "package_url" : "pkg:maven/org.jetbrains/annotations@13.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-stdlib:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.0", "org.jetbrains.kotlin:kotlin-tooling-core:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin-idea:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin-idea-proto:1.9.0", "org.jetbrains.kotlin:kotlin-util-klib:1.9.0", "org.jetbrains.kotlin:kotlin-klib-commonizer-api:1.9.0", "org.jetbrains.kotlin:kotlin-project-model:1.9.0", "org.jetbrains.kotlin:kotlin-build-tools-api:1.9.0", "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.0", "org.jetbrains.kotlin:kotlin-android-extensions:1.9.0", "org.jetbrains.kotlin:kotlin-compiler-runner:1.9.0", "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.9.0", "org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin-api@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.0", "org.jetbrains.kotlin:kotlin-native-utils:1.9.0", "org.jetbrains.kotlin:kotlin-project-model:1.9.0", "org.jetbrains.kotlin:kotlin-tooling-core:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugins-bom@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.0", "org.jetbrains.kotlin:kotlin-tooling-core:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0", "org.jetbrains.kotlin:kotlin-sam-with-receiver:1.9.0", "org.jetbrains.kotlin:kotlin-assignment:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.0", "org.jetbrains.kotlin:kotlin-native-utils:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin-model@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-tooling-core:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-tooling-core@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-sam-with-receiver:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-sam-with-receiver@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-assignment:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-assignment@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin-annotations@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-native-utils:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-native-utils@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-util-io:1.9.0", "org.jetbrains.kotlin:kotlin-util-klib:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-util-io:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-util-io@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-util-klib:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-util-klib@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-util-io:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-project-model:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-project-model@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-tooling-core:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin-idea:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin-idea@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-tooling-core:1.9.0", "org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin-idea-proto:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin-idea-proto@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-idea:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-klib-commonizer-api:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-klib-commonizer-api@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-native-utils:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-build-tools-api:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-build-tools-api@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-compiler-embeddable@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-daemon-embeddable:1.9.0", "org.jetbrains.intellij.deps:trove4j:1.0.20200330", "org.jetbrains.kotlin:kotlin-stdlib:1.9.0", "org.jetbrains.kotlin:kotlin-script-runtime:1.9.0", "org.jetbrains.kotlin:kotlin-reflect:1.6.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-daemon-embeddable:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-daemon-embeddable@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.intellij.deps:trove4j:1.0.20200330" : {
+          "package_url" : "pkg:maven/org.jetbrains.intellij.deps/trove4j@1.0.20200330?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-android-extensions:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-android-extensions@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-compiler-runner:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-compiler-runner@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-daemon-client:1.9.0", "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.0", "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-daemon-client:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-daemon-client@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.5.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.9.0", "org.jetbrains.kotlin:kotlin-stdlib:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-scripting-compiler-impl-embeddable@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-scripting-common:1.9.0", "org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.0", "org.jetbrains.kotlin:kotlin-stdlib:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-scripting-common:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-scripting-common@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-stdlib:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-scripting-jvm@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-scripting-common:1.9.0", "org.jetbrains.kotlin:kotlin-script-runtime:1.9.0", "org.jetbrains.kotlin:kotlin-stdlib:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-reflect:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-reflect@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-stdlib:1.9.0" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.10", "org.jetbrains.kotlin:kotlin-tooling-core:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugin-idea:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugin-idea-proto:1.9.10", "org.jetbrains.kotlin:kotlin-util-klib:1.9.10", "org.jetbrains.kotlin:kotlin-klib-commonizer-api:1.9.10", "org.jetbrains.kotlin:kotlin-project-model:1.9.10", "org.jetbrains.kotlin:kotlin-build-tools-api:1.9.10", "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.10", "org.jetbrains.kotlin:kotlin-android-extensions:1.9.10", "org.jetbrains.kotlin:kotlin-compiler-runner:1.9.10", "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.9.10", "org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin-api@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.10", "org.jetbrains.kotlin:kotlin-native-utils:1.9.10", "org.jetbrains.kotlin:kotlin-project-model:1.9.10", "org.jetbrains.kotlin:kotlin-tooling-core:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugins-bom@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.10", "org.jetbrains.kotlin:kotlin-tooling-core:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10", "org.jetbrains.kotlin:kotlin-allopen:1.9.10", "org.jetbrains.kotlin:kotlin-noarg:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.10", "org.jetbrains.kotlin:kotlin-native-utils:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin-model@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-tooling-core:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-tooling-core@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-allopen:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-allopen@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-noarg:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-noarg@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin-annotations@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-native-utils:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-native-utils@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-util-io:1.9.10", "org.jetbrains.kotlin:kotlin-util-klib:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-util-io:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-util-io@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-util-klib:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-util-klib@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-util-io:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-project-model:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-project-model@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-tooling-core:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-bom:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-bom@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.dokka:dokka-gradle-plugin:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.dokka/dokka-gradle-plugin@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.jetbrains.dokka:dokka-core:1.9.0" ]
+        },
+        "org.jetbrains.dokka:dokka-core:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.dokka/dokka-core@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3", "com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2", "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.2", "com.fasterxml.jackson.core:jackson-databind:2.15.2" ]
+        },
+        "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.1" : {
+          "package_url" : "pkg:maven/io.gitlab.arturbosch.detekt/detekt-gradle-plugin@1.23.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ ]
+        },
+        "org.owasp:dependency-check-gradle:8.4.0" : {
+          "package_url" : "pkg:maven/org.owasp/dependency-check-gradle@8.4.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.owasp:dependency-check-core:8.4.0", "org.owasp:dependency-check-utils:8.4.0", "net.gpedro.integrations.slack:slack-webhook:1.4.0" ]
+        },
+        "org.owasp:dependency-check-core:8.4.0" : {
+          "package_url" : "pkg:maven/org.owasp/dependency-check-core@8.4.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.anarres.jdiagnostics:jdiagnostics:1.0.7", "org.whitesource:pecoff4j:0.0.2.1", "org.apache.commons:commons-jcs-core:2.2.1", "com.github.package-url:packageurl-java:1.4.1", "us.springett:cpe-parser:2.0.2", "org.semver4j:semver4j:5.1.0", "org.slf4j:slf4j-api:1.7.36", "org.owasp:dependency-check-utils:8.4.0", "org.apache.commons:commons-collections4:4.4", "org.apache.commons:commons-compress:1.23.0", "commons-io:commons-io:2.13.0", "org.apache.commons:commons-lang3:3.13.0", "org.apache.commons:commons-text:1.10.0", "org.apache.commons:commons-dbcp2:2.9.0", "org.apache.lucene:lucene-core:8.11.2", "org.apache.lucene:lucene-analyzers-common:8.11.2", "org.apache.lucene:lucene-queryparser:8.11.2", "org.apache.velocity:velocity-engine-core:2.3", "com.h2database:h2:2.1.214", "org.glassfish:javax.json:1.1.4", "org.jsoup:jsoup:1.16.1", "com.fasterxml.jackson.core:jackson-databind:2.15.2", "com.fasterxml.jackson.module:jackson-module-afterburner:2.15.2", "com.fasterxml.jackson.module:jackson-module-blackbird:2.15.2", "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2", "com.h3xstream.retirejs:retirejs-core:3.0.4", "org.sonatype.ossindex:ossindex-service-client:1.8.2", "com.google.guava:guava:32.1.2-jre", "com.moandjiezana.toml:toml4j:0.7.2", "com.hankcs:aho-corasick-double-array-trie:1.2.3", "commons-validator:commons-validator:1.7", "commons-beanutils:commons-beanutils:1.9.4", "org.eclipse.packager:packager-rpm:0.19.0" ]
+        },
+        "org.anarres.jdiagnostics:jdiagnostics:1.0.7" : {
+          "package_url" : "pkg:maven/org.anarres.jdiagnostics/jdiagnostics@1.0.7?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.whitesource:pecoff4j:0.0.2.1" : {
+          "package_url" : "pkg:maven/org.whitesource/pecoff4j@0.0.2.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.apache.commons:commons-jcs-core:2.2.1" : {
+          "package_url" : "pkg:maven/org.apache.commons/commons-jcs-core@2.2.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "commons-logging:commons-logging:1.2" ]
+        },
+        "commons-logging:commons-logging:1.2" : {
+          "package_url" : "pkg:maven/commons-logging/commons-logging@1.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.github.package-url:packageurl-java:1.4.1" : {
+          "package_url" : "pkg:maven/com.github.package-url/packageurl-java@1.4.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "us.springett:cpe-parser:2.0.2" : {
+          "package_url" : "pkg:maven/us.springett/cpe-parser@2.0.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.slf4j:slf4j-api:1.7.36" ]
+        },
+        "org.slf4j:slf4j-api:1.7.36" : {
+          "package_url" : "pkg:maven/org.slf4j/slf4j-api@1.7.36?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.semver4j:semver4j:5.1.0" : {
+          "package_url" : "pkg:maven/org.semver4j/semver4j@5.1.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.owasp:dependency-check-utils:8.4.0" : {
+          "package_url" : "pkg:maven/org.owasp/dependency-check-utils@8.4.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "commons-io:commons-io:2.13.0", "org.apache.commons:commons-lang3:3.13.0", "com.fasterxml.jackson.core:jackson-databind:2.15.2", "org.slf4j:slf4j-api:1.7.36" ]
+        },
+        "commons-io:commons-io:2.13.0" : {
+          "package_url" : "pkg:maven/commons-io/commons-io@2.13.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.apache.commons:commons-lang3:3.13.0" : {
+          "package_url" : "pkg:maven/org.apache.commons/commons-lang3@3.13.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.fasterxml.jackson.core:jackson-databind:2.15.2" : {
+          "package_url" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.fasterxml.jackson.core:jackson-annotations:2.15.2", "com.fasterxml.jackson.core:jackson-core:2.15.2", "com.fasterxml.jackson:jackson-bom:2.15.2" ]
+        },
+        "com.fasterxml.jackson.core:jackson-annotations:2.15.2" : {
+          "package_url" : "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.15.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.fasterxml.jackson:jackson-bom:2.15.2" ]
+        },
+        "com.fasterxml.jackson:jackson-bom:2.15.2" : {
+          "package_url" : "pkg:maven/com.fasterxml.jackson/jackson-bom@2.15.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.fasterxml.jackson.core:jackson-annotations:2.15.2", "com.fasterxml.jackson.core:jackson-core:2.15.2", "com.fasterxml.jackson.core:jackson-databind:2.15.2", "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2", "com.fasterxml.jackson.module:jackson-module-afterburner:2.15.2", "com.fasterxml.jackson.module:jackson-module-blackbird:2.15.2", "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.2", "com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2" ]
+        },
+        "com.fasterxml.jackson.core:jackson-core:2.15.2" : {
+          "package_url" : "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.15.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.fasterxml.jackson:jackson-bom:2.15.2" ]
+        },
+        "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2" : {
+          "package_url" : "pkg:maven/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml@2.15.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.fasterxml.jackson.core:jackson-databind:2.15.2", "org.yaml:snakeyaml:2.0", "com.fasterxml.jackson.core:jackson-core:2.15.2", "com.fasterxml.jackson:jackson-bom:2.15.2" ]
+        },
+        "org.yaml:snakeyaml:2.0" : {
+          "package_url" : "pkg:maven/org.yaml/snakeyaml@2.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.fasterxml.jackson.module:jackson-module-afterburner:2.15.2" : {
+          "package_url" : "pkg:maven/com.fasterxml.jackson.module/jackson-module-afterburner@2.15.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.fasterxml.jackson.core:jackson-core:2.15.2", "com.fasterxml.jackson.core:jackson-databind:2.15.2", "com.fasterxml.jackson:jackson-bom:2.15.2" ]
+        },
+        "com.fasterxml.jackson.module:jackson-module-blackbird:2.15.2" : {
+          "package_url" : "pkg:maven/com.fasterxml.jackson.module/jackson-module-blackbird@2.15.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.fasterxml.jackson.core:jackson-core:2.15.2", "com.fasterxml.jackson.core:jackson-databind:2.15.2", "com.fasterxml.jackson:jackson-bom:2.15.2" ]
+        },
+        "org.apache.commons:commons-collections4:4.4" : {
+          "package_url" : "pkg:maven/org.apache.commons/commons-collections4@4.4?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.apache.commons:commons-compress:1.23.0" : {
+          "package_url" : "pkg:maven/org.apache.commons/commons-compress@1.23.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.apache.commons:commons-text:1.10.0" : {
+          "package_url" : "pkg:maven/org.apache.commons/commons-text@1.10.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.apache.commons:commons-lang3:3.13.0" ]
+        },
+        "org.apache.commons:commons-dbcp2:2.9.0" : {
+          "package_url" : "pkg:maven/org.apache.commons/commons-dbcp2@2.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.apache.commons:commons-pool2:2.10.0", "commons-logging:commons-logging:1.2" ]
+        },
+        "org.apache.commons:commons-pool2:2.10.0" : {
+          "package_url" : "pkg:maven/org.apache.commons/commons-pool2@2.10.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.apache.lucene:lucene-core:8.11.2" : {
+          "package_url" : "pkg:maven/org.apache.lucene/lucene-core@8.11.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.apache.lucene:lucene-analyzers-common:8.11.2" : {
+          "package_url" : "pkg:maven/org.apache.lucene/lucene-analyzers-common@8.11.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.apache.lucene:lucene-core:8.11.2" ]
+        },
+        "org.apache.lucene:lucene-queryparser:8.11.2" : {
+          "package_url" : "pkg:maven/org.apache.lucene/lucene-queryparser@8.11.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.apache.lucene:lucene-core:8.11.2", "org.apache.lucene:lucene-queries:8.11.2", "org.apache.lucene:lucene-sandbox:8.11.2" ]
+        },
+        "org.apache.lucene:lucene-queries:8.11.2" : {
+          "package_url" : "pkg:maven/org.apache.lucene/lucene-queries@8.11.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.apache.lucene:lucene-sandbox:8.11.2" : {
+          "package_url" : "pkg:maven/org.apache.lucene/lucene-sandbox@8.11.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.apache.velocity:velocity-engine-core:2.3" : {
+          "package_url" : "pkg:maven/org.apache.velocity/velocity-engine-core@2.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.apache.commons:commons-lang3:3.13.0", "org.slf4j:slf4j-api:1.7.36" ]
+        },
+        "com.h2database:h2:2.1.214" : {
+          "package_url" : "pkg:maven/com.h2database/h2@2.1.214?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.glassfish:javax.json:1.1.4" : {
+          "package_url" : "pkg:maven/org.glassfish/javax.json@1.1.4?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jsoup:jsoup:1.16.1" : {
+          "package_url" : "pkg:maven/org.jsoup/jsoup@1.16.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.h3xstream.retirejs:retirejs-core:3.0.4" : {
+          "package_url" : "pkg:maven/com.h3xstream.retirejs/retirejs-core@3.0.4?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.vaadin.external.google:android-json:0.0.20131108.vaadin1", "com.esotericsoftware:minlog:1.3.1", "com.github.spullara.mustache.java:compiler:0.9.6" ]
+        },
+        "com.vaadin.external.google:android-json:0.0.20131108.vaadin1" : {
+          "package_url" : "pkg:maven/com.vaadin.external.google/android-json@0.0.20131108.vaadin1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.esotericsoftware:minlog:1.3.1" : {
+          "package_url" : "pkg:maven/com.esotericsoftware/minlog@1.3.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.github.spullara.mustache.java:compiler:0.9.6" : {
+          "package_url" : "pkg:maven/com.github.spullara.mustache.java/compiler@0.9.6?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.sonatype.ossindex:ossindex-service-client:1.8.2" : {
+          "package_url" : "pkg:maven/org.sonatype.ossindex/ossindex-service-client@1.8.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.sonatype.ossindex:ossindex-service-api:1.8.2", "javax.inject:javax.inject:1", "org.slf4j:slf4j-api:1.7.36", "org.slf4j:jcl-over-slf4j:1.7.28", "joda-time:joda-time:2.10.4", "com.google.code.gson:gson:2.9.0", "javax.xml.bind:jaxb-api:2.3.1" ]
+        },
+        "org.sonatype.ossindex:ossindex-service-api:1.8.2" : {
+          "package_url" : "pkg:maven/org.sonatype.ossindex/ossindex-service-api@1.8.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.slf4j:slf4j-api:1.7.36", "com.fasterxml.jackson.core:jackson-annotations:2.15.2", "javax.xml.bind:jaxb-api:2.3.1", "javax.ws.rs:javax.ws.rs-api:2.0.1", "org.sonatype.goodies:package-url-java:1.1.1" ]
+        },
+        "javax.xml.bind:jaxb-api:2.3.1" : {
+          "package_url" : "pkg:maven/javax.xml.bind/jaxb-api@2.3.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "javax.activation:javax.activation-api:1.2.0" ]
+        },
+        "javax.activation:javax.activation-api:1.2.0" : {
+          "package_url" : "pkg:maven/javax.activation/javax.activation-api@1.2.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "javax.ws.rs:javax.ws.rs-api:2.0.1" : {
+          "package_url" : "pkg:maven/javax.ws.rs/javax.ws.rs-api@2.0.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.sonatype.goodies:package-url-java:1.1.1" : {
+          "package_url" : "pkg:maven/org.sonatype.goodies/package-url-java@1.1.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "javax.inject:javax.inject:1" : {
+          "package_url" : "pkg:maven/javax.inject/javax.inject@1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.slf4j:jcl-over-slf4j:1.7.28" : {
+          "package_url" : "pkg:maven/org.slf4j/jcl-over-slf4j@1.7.28?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.slf4j:slf4j-api:1.7.36" ]
+        },
+        "joda-time:joda-time:2.10.4" : {
+          "package_url" : "pkg:maven/joda-time/joda-time@2.10.4?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.google.code.gson:gson:2.9.0" : {
+          "package_url" : "pkg:maven/com.google.code.gson/gson@2.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.google.guava:guava:32.1.2-jre" : {
+          "package_url" : "pkg:maven/com.google.guava/guava@32.1.2-jre?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.google.guava:guava-parent:32.1.2-jre", "com.google.guava:failureaccess:1.0.1", "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava", "com.google.code.findbugs:jsr305:3.0.2", "org.checkerframework:checker-qual:3.33.0", "com.google.errorprone:error_prone_annotations:2.18.0", "com.google.j2objc:j2objc-annotations:2.8" ]
+        },
+        "com.google.guava:guava-parent:32.1.2-jre" : {
+          "package_url" : "pkg:maven/com.google.guava/guava-parent@32.1.2-jre?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.google.code.findbugs:jsr305:3.0.2", "org.checkerframework:checker-qual:3.33.0", "com.google.errorprone:error_prone_annotations:2.18.0", "com.google.j2objc:j2objc-annotations:2.8" ]
+        },
+        "com.google.code.findbugs:jsr305:3.0.2" : {
+          "package_url" : "pkg:maven/com.google.code.findbugs/jsr305@3.0.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.checkerframework:checker-qual:3.33.0" : {
+          "package_url" : "pkg:maven/org.checkerframework/checker-qual@3.33.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.google.errorprone:error_prone_annotations:2.18.0" : {
+          "package_url" : "pkg:maven/com.google.errorprone/error_prone_annotations@2.18.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.google.j2objc:j2objc-annotations:2.8" : {
+          "package_url" : "pkg:maven/com.google.j2objc/j2objc-annotations@2.8?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.google.guava:failureaccess:1.0.1" : {
+          "package_url" : "pkg:maven/com.google.guava/failureaccess@1.0.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" : {
+          "package_url" : "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.moandjiezana.toml:toml4j:0.7.2" : {
+          "package_url" : "pkg:maven/com.moandjiezana.toml/toml4j@0.7.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.google.code.gson:gson:2.9.0" ]
+        },
+        "com.hankcs:aho-corasick-double-array-trie:1.2.3" : {
+          "package_url" : "pkg:maven/com.hankcs/aho-corasick-double-array-trie@1.2.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "commons-validator:commons-validator:1.7" : {
+          "package_url" : "pkg:maven/commons-validator/commons-validator@1.7?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "commons-beanutils:commons-beanutils:1.9.4", "commons-digester:commons-digester:2.1", "commons-logging:commons-logging:1.2", "commons-collections:commons-collections:3.2.2" ]
+        },
+        "commons-beanutils:commons-beanutils:1.9.4" : {
+          "package_url" : "pkg:maven/commons-beanutils/commons-beanutils@1.9.4?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "commons-logging:commons-logging:1.2", "commons-collections:commons-collections:3.2.2" ]
+        },
+        "commons-collections:commons-collections:3.2.2" : {
+          "package_url" : "pkg:maven/commons-collections/commons-collections@3.2.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "commons-digester:commons-digester:2.1" : {
+          "package_url" : "pkg:maven/commons-digester/commons-digester@2.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.eclipse.packager:packager-rpm:0.19.0" : {
+          "package_url" : "pkg:maven/org.eclipse.packager/packager-rpm@0.19.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.eclipse.packager:packager-core:0.19.0", "org.slf4j:slf4j-api:1.7.36", "org.apache.commons:commons-compress:1.23.0", "com.google.guava:guava:32.1.2-jre", "org.tukaani:xz:1.9" ]
+        },
+        "org.eclipse.packager:packager-core:0.19.0" : {
+          "package_url" : "pkg:maven/org.eclipse.packager/packager-core@0.19.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.bouncycastle:bcprov-jdk18on:1.71", "org.bouncycastle:bcpg-jdk18on:1.71" ]
+        },
+        "org.bouncycastle:bcprov-jdk18on:1.71" : {
+          "package_url" : "pkg:maven/org.bouncycastle/bcprov-jdk18on@1.71?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.bouncycastle:bcpg-jdk18on:1.71" : {
+          "package_url" : "pkg:maven/org.bouncycastle/bcpg-jdk18on@1.71?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.bouncycastle:bcprov-jdk18on:1.71" ]
+        },
+        "org.tukaani:xz:1.9" : {
+          "package_url" : "pkg:maven/org.tukaani/xz@1.9?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "net.gpedro.integrations.slack:slack-webhook:1.4.0" : {
+          "package_url" : "pkg:maven/net.gpedro.integrations.slack/slack-webhook@1.4.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.google.code.gson:gson:2.9.0" ]
+        },
+        "org.asciidoctor:asciidoctor-gradle-jvm:4.0.0-alpha.1" : {
+          "package_url" : "pkg:maven/org.asciidoctor/asciidoctor-gradle-jvm@4.0.0-alpha.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.ysb33r.gradle:grolifant-herd:2.0.0-alpha.6", "org.asciidoctor:asciidoctor-gradle-base:4.0.0-alpha.1" ]
+        },
+        "org.ysb33r.gradle:grolifant-herd:2.0.0-alpha.6" : {
+          "package_url" : "pkg:maven/org.ysb33r.gradle/grolifant-herd@2.0.0-alpha.6?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.ysb33r.gradle:grolifant40:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant50:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant60:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant70:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant-core:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant40-legacy-api:2.0.0-alpha.6", "org.tukaani:xz:1.9" ]
+        },
+        "org.ysb33r.gradle:grolifant40:2.0.0-alpha.6" : {
+          "package_url" : "pkg:maven/org.ysb33r.gradle/grolifant40@2.0.0-alpha.6?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.ysb33r.gradle:grolifant-core:2.0.0-alpha.6", "org.tukaani:xz:1.9", "org.apache.commons:commons-collections4:4.4" ]
+        },
+        "org.ysb33r.gradle:grolifant-core:2.0.0-alpha.6" : {
+          "package_url" : "pkg:maven/org.ysb33r.gradle/grolifant-core@2.0.0-alpha.6?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.tukaani:xz:1.9", "org.apache.commons:commons-collections4:4.4" ]
+        },
+        "org.ysb33r.gradle:grolifant50:2.0.0-alpha.6" : {
+          "package_url" : "pkg:maven/org.ysb33r.gradle/grolifant50@2.0.0-alpha.6?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.ysb33r.gradle:grolifant40:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant-core:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant40-legacy-api:2.0.0-alpha.6", "org.tukaani:xz:1.9" ]
+        },
+        "org.ysb33r.gradle:grolifant40-legacy-api:2.0.0-alpha.6" : {
+          "package_url" : "pkg:maven/org.ysb33r.gradle/grolifant40-legacy-api@2.0.0-alpha.6?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.ysb33r.gradle:grolifant-core:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant40:2.0.0-alpha.6", "org.tukaani:xz:1.9", "org.apache.commons:commons-collections4:4.4" ]
+        },
+        "org.ysb33r.gradle:grolifant60:2.0.0-alpha.6" : {
+          "package_url" : "pkg:maven/org.ysb33r.gradle/grolifant60@2.0.0-alpha.6?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.ysb33r.gradle:grolifant40:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant50:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant-core:2.0.0-alpha.6", "org.tukaani:xz:1.9" ]
+        },
+        "org.ysb33r.gradle:grolifant70:2.0.0-alpha.6" : {
+          "package_url" : "pkg:maven/org.ysb33r.gradle/grolifant70@2.0.0-alpha.6?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.ysb33r.gradle:grolifant40:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant50:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant60:2.0.0-alpha.6", "org.ysb33r.gradle:grolifant-core:2.0.0-alpha.6", "org.tukaani:xz:1.9" ]
+        },
+        "org.asciidoctor:asciidoctor-gradle-base:4.0.0-alpha.1" : {
+          "package_url" : "pkg:maven/org.asciidoctor/asciidoctor-gradle-base@4.0.0-alpha.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.ysb33r.gradle:grolifant-herd:2.0.0-alpha.6" ]
+        },
+        "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:4.3.1.3277" : {
+          "package_url" : "pkg:maven/org.sonarsource.scanner.gradle/sonarqube-gradle-plugin@4.3.1.3277?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ "org.sonarsource.scanner.api:sonar-scanner-api:2.16.2.588" ]
+        },
+        "com.bmuschko:gradle-docker-plugin:9.3.3" : {
+          "package_url" : "pkg:maven/com.bmuschko/gradle-docker-plugin@9.3.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ ]
+        },
+        "com.gorylenko.gradle-git-properties:gradle-git-properties:2.4.1" : {
+          "package_url" : "pkg:maven/com.gorylenko.gradle-git-properties/gradle-git-properties@2.4.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin-idea:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin-idea@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-tooling-core:1.9.10", "org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-gradle-plugin-idea-proto:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-gradle-plugin-idea-proto@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-gradle-plugin-idea:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-klib-commonizer-api:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-klib-commonizer-api@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-native-utils:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-build-tools-api:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-build-tools-api@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-compiler-embeddable@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-daemon-embeddable:1.9.10", "org.jetbrains.intellij.deps:trove4j:1.0.20200330" ]
+        },
+        "org.jetbrains.kotlin:kotlin-daemon-embeddable:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-daemon-embeddable@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-android-extensions:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-android-extensions@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-compiler-runner:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-compiler-runner@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-daemon-client:1.9.10", "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.3", "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-daemon-client:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-daemon-client@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.3" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.3" ]
+        },
+        "org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.3" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-bom@1.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.3", "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3" ]
+        },
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core@1.6.3?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.3" ]
+        },
+        "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-scripting-compiler-impl-embeddable@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-scripting-common:1.9.10", "org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.10" ]
+        },
+        "org.jetbrains.kotlin:kotlin-scripting-common:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-scripting-common@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-scripting-jvm@1.9.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.jetbrains.kotlin:kotlin-scripting-common:1.9.10" ]
+        },
+        "com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2" : {
+          "package_url" : "pkg:maven/com.fasterxml.jackson.module/jackson-module-kotlin@2.15.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.fasterxml.jackson.core:jackson-databind:2.15.2", "com.fasterxml.jackson.core:jackson-annotations:2.15.2", "com.fasterxml.jackson:jackson-bom:2.15.2" ]
+        },
+        "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.2" : {
+          "package_url" : "pkg:maven/com.fasterxml.jackson.dataformat/jackson-dataformat-xml@2.15.2?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "com.fasterxml.jackson.core:jackson-core:2.15.2", "com.fasterxml.jackson.core:jackson-annotations:2.15.2", "com.fasterxml.jackson.core:jackson-databind:2.15.2", "org.codehaus.woodstox:stax2-api:4.2.1", "com.fasterxml.woodstox:woodstox-core:6.5.1", "com.fasterxml.jackson:jackson-bom:2.15.2" ]
+        },
+        "org.codehaus.woodstox:stax2-api:4.2.1" : {
+          "package_url" : "pkg:maven/org.codehaus.woodstox/stax2-api@4.2.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "com.fasterxml.woodstox:woodstox-core:6.5.1" : {
+          "package_url" : "pkg:maven/com.fasterxml.woodstox/woodstox-core@6.5.1?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ "org.codehaus.woodstox:stax2-api:4.2.1" ]
+        },
+        "org.sonarsource.scanner.api:sonar-scanner-api:2.16.2.588" : {
+          "package_url" : "pkg:maven/org.sonarsource.scanner.api/sonar-scanner-api@2.16.2.588?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-script-runtime:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-script-runtime@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-reflect:1.6.10" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-reflect@1.6.10?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "indirect",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-sam-with-receiver-compiler-plugin-embeddable:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-sam-with-receiver-compiler-plugin-embeddable@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ ]
+        },
+        "org.jetbrains.kotlin:kotlin-assignment-compiler-plugin-embeddable:1.9.0" : {
+          "package_url" : "pkg:maven/org.jetbrains.kotlin/kotlin-assignment-compiler-plugin-embeddable@1.9.0?repository_url=https%3A%2F%2Fplugins.gradle.org%2Fm2",
+          "relationship" : "direct",
+          "dependencies" : [ ]
+        },
+        "gradle:gradle:8.3" : {
+          "package_url" : "pkg:maven/gradle/gradle@8.3?repository_url=https%3A%2F%2Fservices.gradle.org%2Fdistributions",
+          "relationship" : "direct",
+          "dependencies" : [ ]
+        }
+      },
+      "file" : {
+        "source_location" : "settings.gradle.kts"
+      }
+    }
+  },
+  "scanned" : "2023-09-27T08:14:28Z"
+}
