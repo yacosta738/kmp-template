@@ -8,6 +8,7 @@ concurrency:
 
 env:
     TZ: UTC
+    BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
 
 permissions:
     contents: write
@@ -34,8 +35,16 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            -   name: 🔍 BOT_TOKEN
+                if: env.BOT_TOKEN == ''
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                run: echo "BOT_TOKEN=${GITHUB_TOKEN}" >> $GITHUB_ENV
             -   name: 🔄 Checkout
                 uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
+                    token: ${{ env.BOT_TOKEN }}
             -   name: ⚙️ Common Steps for all jobs
                 uses: ./.github/actions/common-steps
             -   name: 🧪 Run tests
@@ -47,7 +56,7 @@ jobs:
                 uses: actions/github-script@v6
                 if: github.event_name == 'pull_request' && failure()
                 with:
-                    github-token: ${{secrets.GITHUB_TOKEN}}
+                    github-token: ${{env.BOT_TOKEN}}
                     script: |
                         github.rest.issues.createComment({
                           issue_number: context.issue.number,
@@ -72,7 +81,7 @@ jobs:
                 with:
                     default_author: github_actions
                     message: 'commit badge 🍀 ${{ steps.jacoco.outputs.coverage }} %'
-                    github_token: ${{ secrets.BOT_PAT }}
+                    github_token: ${{ env.BOT_TOKEN }}
             -   name: 📑 Upload documentation results
                 uses: actions/upload-artifact@v3
                 with:
