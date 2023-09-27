@@ -9,6 +9,10 @@ pluginManagement {
     }
 }
 
+plugins {
+    id("com.gradle.enterprise") version ("3.15")
+}
+
 fun includeProject(dir: File) {
     include(dir.name)
     val prj = project(":${dir.name}")
@@ -28,6 +32,16 @@ fun includeProjectsInDir(dirName: String) {
 val projects = listOf("apps", "shared")
 projects.forEach { includeProjectsInDir(it) }
 includeProject(file("documentation"))
+
+if (!System.getenv("CI").isNullOrEmpty() && !System.getenv("BUILD_SCAN_TOS_ACCEPTED").isNullOrEmpty()) {
+    gradleEnterprise {
+        buildScan {
+            termsOfServiceUrl = "https://gradle.com/terms-of-service"
+            termsOfServiceAgree = "yes"
+            tag("CI")
+        }
+    }
+}
 
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

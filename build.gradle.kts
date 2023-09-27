@@ -28,11 +28,6 @@ allprojects {
     group = properties["group"] as String
 }
 
-extensions.findByName("buildScan")?.withGroovyBuilder {
-    setProperty("termsOfServiceUrl", "https://gradle.com/terms-of-service")
-    setProperty("termsOfServiceAgree", "yes")
-}
-
 repositories {
     mavenCentral()
 }
@@ -44,5 +39,6 @@ tasks.dokkaHtmlMultiModule.configure {
 }
 
 dependencies {
+    implementation(project(":app"))
     asciidoc(project(":documentation"))
 }
