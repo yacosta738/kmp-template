@@ -14,6 +14,7 @@ plugins {
 }
 
 fun includeProject(dir: File) {
+    println("Loading submodule \uD83D\uDCE6: ${dir.name}")
     include(dir.name)
     val prj = project(":${dir.name}")
     prj.projectDir = dir
