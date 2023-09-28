@@ -30,7 +30,7 @@ dependencies {
     implementation(kotlin("bom", kotlinVersion))
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib"))
-    /** buildSrc in combination with this plugin ensures that the version set here
+    /** build-logic in combination with this plugin ensures that the version set here
     will be set to the same for all other Kotlin dependencies / plugins in the project. */
     add("implementation", libs.findLibrary("kotlin-gradle").get())
     /** https://kotlinlang.org/docs/all-open-plugin.html

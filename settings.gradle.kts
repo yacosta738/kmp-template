@@ -3,6 +3,7 @@ import org.gradle.kotlin.dsl.support.listFilesOrdered
 rootProject.name = "kmp-template"
 
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         gradlePluginPortal()
         mavenCentral()
@@ -11,6 +12,7 @@ pluginManagement {
 
 plugins {
     id("com.gradle.enterprise") version ("3.15")
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.4.0"
 }
 
 fun includeProject(dir: File) {
