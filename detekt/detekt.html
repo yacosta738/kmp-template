@@ -176,19 +176,97 @@
     <li>25 comment lines of code (cloc)</li>
     <li>38 cyclomatic complexity (mcc)</li>
     <li>20 cognitive complexity</li>
-    <li>0 number of total code smells</li>
+    <li>6 number of total code smells</li>
     <li>11% comment source ratio</li>
     <li>262 mcc per 1,000 lloc</li>
-    <li>0 code smells per 1,000 lloc</li>
+    <li>41 code smells per 1,000 lloc</li>
   </ul>
 </div>
 
 
 <h2>Findings</h2>
-<div>Total: 0</div>
+<div>Total: 6
+  <h3>formatting: 6</h3>
+  <details id="ImportOrdering" open="open">
+    <summary class="rule-container"><span class="rule">ImportOrdering: 3 </span><span class="description">Detects imports in non default order</span></summary>
+<a href="https://detekt.dev/docs/rules/formatting#importordering">Documentation</a>
+    <ul>
+      <li><span class="location">/home/runner/work/kmp-template/kmp-template/apps/app/src/main/kotlin/io/kmptemplate/app/App.kt:3:1</span><span class="message">Imports must be ordered in lexicographic order without any empty lines in-between with &quot;java&quot;, &quot;javax&quot;, &quot;kotlin&quot; and aliases in the end</span>
+        <pre><code><span class="lineno">   1 </span>package io.kmptemplate.app
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span><span class="error">import io.kmptemplate.utilities.StringUtils</span>
+<span class="lineno">   4 </span><span class="error"></span>
+<span class="lineno">   5 </span><span class="error">import org.apache.commons.text.WordUtils</span>
+<span class="lineno">   6 </span>
+</code></pre>
+      </li>
+      <li><span class="location">/home/runner/work/kmp-template/kmp-template/apps/app/src/test/kotlin/io/kmptemplate/app/MessageUtilsTest.kt:6:1</span><span class="message">Imports must be ordered in lexicographic order without any empty lines in-between with &quot;java&quot;, &quot;javax&quot;, &quot;kotlin&quot; and aliases in the end</span>
+        <pre><code><span class="lineno">   3 </span> */
+<span class="lineno">   4 </span>package io.kmptemplate.app
+<span class="lineno">   5 </span>
+<span class="lineno">   6 </span><span class="error">import org.junit.jupiter.api.Test</span>
+<span class="lineno">   7 </span><span class="error"></span>
+<span class="lineno">   8 </span><span class="error">import org.junit.jupiter.api.Assertions.assertEquals</span>
+<span class="lineno">   9 </span>
+</code></pre>
+      </li>
+      <li><span class="location">/home/runner/work/kmp-template/kmp-template/shared/list/src/test/kotlin/io/kmptemplate/list/LinkedListTest.kt:6:1</span><span class="message">Imports must be ordered in lexicographic order without any empty lines in-between with &quot;java&quot;, &quot;javax&quot;, &quot;kotlin&quot; and aliases in the end</span>
+        <pre><code><span class="lineno">   3 </span> */
+<span class="lineno">   4 </span>package io.kmptemplate.list
+<span class="lineno">   5 </span>
+<span class="lineno">   6 </span><span class="error">import assertk.assertThat</span>
+<span class="lineno">   7 </span><span class="error">import assertk.assertions.isEqualTo</span>
+<span class="lineno">   8 </span><span class="error">import assertk.assertions.isTrue</span>
+<span class="lineno">   9 </span><span class="error">import assertk.assertions.isFalse</span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="NoBlankLineBeforeRbrace" open="open">
+    <summary class="rule-container"><span class="rule">NoBlankLineBeforeRbrace: 2 </span><span class="description">Detects blank lines before rbraces</span></summary>
+<a href="https://detekt.dev/docs/rules/formatting#noblanklinebeforerbrace">Documentation</a>
+    <ul>
+      <li><span class="location">/home/runner/work/kmp-template/kmp-template/shared/list/src/test/kotlin/io/kmptemplate/AnotherInternalDummyClassTest.kt:14:6</span><span class="message">Unexpected blank line(s) before &quot;}&quot;</span>
+        <pre><code><span class="lineno">  11 </span>        val dummy = AnotherInternalDummyClass(&quot;name&quot;)
+<span class="lineno">  12 </span>
+<span class="lineno">  13 </span>        assertThat(dummy.name).isEqualTo(&quot;name&quot;)
+<span class="lineno">  14 </span>    }<span class="error"></span>
+<span class="lineno">  15 </span><span class="error"></span>
+<span class="lineno">  16 </span>}
+<span class="lineno">  17 </span>
+</code></pre>
+      </li>
+      <li><span class="location">/home/runner/work/kmp-template/kmp-template/shared/list/src/testIntegration/kotlin/io/kmptemplate/InternalDummyClassTest.kt:23:6</span><span class="message">Unexpected blank line(s) before &quot;}&quot;</span>
+        <pre><code><span class="lineno">  20 </span>
+<span class="lineno">  21 </span>        assertThat(dummy.name).isEqualTo(&quot;name&quot;)
+<span class="lineno">  22 </span>        assertThat(dummy.nick).isEqualTo(&quot;&quot;)
+<span class="lineno">  23 </span>    }<span class="error"></span>
+<span class="lineno">  24 </span><span class="error"></span>
+<span class="lineno">  25 </span>}
+<span class="lineno">  26 </span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="NoConsecutiveBlankLines" open="open">
+    <summary class="rule-container"><span class="rule">NoConsecutiveBlankLines: 1 </span><span class="description">Reports consecutive blank lines</span></summary>
+<a href="https://detekt.dev/docs/rules/formatting#noconsecutiveblanklines">Documentation</a>
+    <ul>
+      <li><span class="location">/home/runner/work/kmp-template/kmp-template/apps/app/src/main/kotlin/io/kmptemplate/app/MessageUtils.kt:9:2</span><span class="message">Needless blank line(s)</span>
+        <pre><code><span class="lineno">   6 </span>object MessageUtils {
+<span class="lineno">   7 </span>    private const val message = &quot;Hello      World!&quot;
+<span class="lineno">   8 </span>    fun getMessage(): String = message
+<span class="lineno">   9 </span>}<span class="error"></span>
+<span class="lineno">  10 </span><span class="error"></span>
+<span class="lineno">  11 </span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+</div>
 
 
-generated with <a href="https://detekt.dev/">detekt version 1.23.1</a> on 2023-09-26 13:18:42 UTC.
+generated with <a href="https://detekt.dev/">detekt version 1.23.1</a> on 2023-09-28 15:09:02 UTC.
 
 </body>
 </html>

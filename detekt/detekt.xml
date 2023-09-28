@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="4.3">
+<file name="/home/runner/work/kmp-template/kmp-template/apps/app/src/main/kotlin/io/kmptemplate/app/App.kt">
+	<error line="3" column="1" severity="warning" message="Imports must be ordered in lexicographic order without any empty lines in-between with &quot;java&quot;, &quot;javax&quot;, &quot;kotlin&quot; and aliases in the end" source="detekt.ImportOrdering" />
+</file>
+<file name="/home/runner/work/kmp-template/kmp-template/apps/app/src/main/kotlin/io/kmptemplate/app/MessageUtils.kt">
+	<error line="9" column="2" severity="warning" message="Needless blank line(s)" source="detekt.NoConsecutiveBlankLines" />
+</file>
+<file name="/home/runner/work/kmp-template/kmp-template/apps/app/src/test/kotlin/io/kmptemplate/app/MessageUtilsTest.kt">
+	<error line="6" column="1" severity="warning" message="Imports must be ordered in lexicographic order without any empty lines in-between with &quot;java&quot;, &quot;javax&quot;, &quot;kotlin&quot; and aliases in the end" source="detekt.ImportOrdering" />
+</file>
+<file name="/home/runner/work/kmp-template/kmp-template/shared/list/src/test/kotlin/io/kmptemplate/AnotherInternalDummyClassTest.kt">
+	<error line="14" column="6" severity="warning" message="Unexpected blank line(s) before &quot;}&quot;" source="detekt.NoBlankLineBeforeRbrace" />
+</file>
+<file name="/home/runner/work/kmp-template/kmp-template/shared/list/src/test/kotlin/io/kmptemplate/list/LinkedListTest.kt">
+	<error line="6" column="1" severity="warning" message="Imports must be ordered in lexicographic order without any empty lines in-between with &quot;java&quot;, &quot;javax&quot;, &quot;kotlin&quot; and aliases in the end" source="detekt.ImportOrdering" />
+</file>
+<file name="/home/runner/work/kmp-template/kmp-template/shared/list/src/testIntegration/kotlin/io/kmptemplate/InternalDummyClassTest.kt">
+	<error line="23" column="6" severity="warning" message="Unexpected blank line(s) before &quot;}&quot;" source="detekt.NoBlankLineBeforeRbrace" />
+</file>
 </checkstyle>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
-<title>Semantic Release für gradle Projekte</title>
+<title>Semantic Release for Gradle Projects</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -653,31 +653,24 @@ pre.rouge {
 </head>
 <body class="article">
 <div id="header">
-<h1>Semantic Release für gradle Projekte</h1>
+<h1>Semantic Release for Gradle Projects</h1>
 <div class="details">
-<span id="revnumber">version 1.1.0,</span>
-<span id="revdate">2023-09-26</span>
+<span id="revnumber">version 2.0.0,</span>
+<span id="revdate">2023-09-28</span>
 </div>
 </div>
 <div id="content">
 <div class="paragraph">
-<p>Bereits 1997 hat Eric S. Raymond in seinem Essay "<a href="https://de.wikipedia.org/wiki/Die_Kathedrale_und_der_Basar">Die Kathedrale und der Basar</a>" den Leitsatz "Release early, release often" geprägt.
-Mit dem DevOps-Paradigma ist das Continuous Delivery Konzept, das eben diesem Leitsatz folgt, aktueller den je.
-In der aktuellen Software-Entwicklung geht es also auch darum, Releases reibungslos erstellen zu können.
-Damit dies funktioniert, muss der Erstellungs-Prozess für ein Release einfach, reproduzierbar und automatisiert sein.</p>
+<p>As early as 1997, Eric S. Raymond coined the phrase "<a href="https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar">The Cathedral and the Bazaar</a>" in his essay, "Release early, release often." With the DevOps paradigm, the concept of Continuous Delivery, which follows this motto, is more relevant than ever. In current software development, it&#8217;s crucial to be able to create releases smoothly. To achieve this, the release process must be simple, reproducible, and automated.</p>
 </div>
 <div class="paragraph">
-<p>Um Releases ein-eindeutig identifizeren und referenzieren zu können, wird eine Namensgebung für Versionen benötigt.
-Dazu hat sich das <a href="https://semver.org/">Semantic Versioning</a> durchgesetzt.
-Semantic Versioning definiert, wie eine Versionnummer aufgebaut und inkrementiert wird.</p>
+<p>To uniquely identify and reference releases, a versioning scheme is required. This is where <a href="https://semver.org/">Semantic Versioning</a> comes into play. Semantic Versioning defines how a version number is structured and incremented.</p>
 </div>
 <div class="paragraph">
-<p>Durch die Verwendung von <a href="https://www.conventionalcommits.org/">Conventional Commits</a> können Entwickler mit Commit-Messages angeben, welcher Teil einer Version inkrementiert werden soll.
-Dies bietet den Vorteil, das Änderungen am Code direkt dokumentiert werden und in dem Changelog eines Projektes dann automatisch aufgelistet werden können.
-Die Spezifikation enthält Vorgaben, wie die Commit-Messages angelegt werden müssen.</p>
+<p>By using <a href="https://www.conventionalcommits.org/">Conventional Commits</a>, developers can specify in commit messages which part of a version should be incremented. This has the advantage of documenting code changes directly and automatically listing them in a project&#8217;s changelog. The specification provides guidelines on how commit messages should be structured.</p>
 </div>
 <div class="paragraph">
-<p>Einige Schlüssel-Begriffe der Conventional-Commits sind:</p>
+<p>Some key terms of Conventional Commits are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -693,23 +686,16 @@ Die Spezifikation enthält Vorgaben, wie die Commit-Messages angelegt werden mü
 </ul>
 </div>
 <div class="paragraph">
-<p>Mit diesen Präfixes in den Commit Messages wird entschieden, welcher Teil einer Versionsnummer inkrementiert wird.
-Somit können dann, im Rahmen des Continouus Deployment-Strategie, Builds automatisch gestartet und mit der daraus gewonnenen Versionnummer publiziert werden.</p>
+<p>By using these prefixes in commit messages, you can determine which part of a version number should be incremented. Consequently, within the context of Continuous Deployment strategies, builds can be automatically triggered and published with the resulting version number.</p>
 </div>
 <div class="paragraph">
-<p>Um den Release Prozess mit den vorgenannten Spezifikationen zu automatisieren, gibt es im Javascript-Bereich das
-<a href="https://semantic-release.gitbook.io/semantic-release/">Semantic Release</a> Toolset.
-Dieses Toolset ist zwar für Javascript gebaut und optimiert, kann jedoch auch in anderen Umgebungen eingesetzt werden.
-Hier möchte ich auf die Verwendung in einem Java-Projekt, das mit Gradle gebaut wird, eingehen.</p>
+<p>To automate the release process with the aforementioned specifications, the JavaScript community has developed the <a href="https://semantic-release.gitbook.io/semantic-release/">Semantic Release</a> toolset. Although this toolset is primarily designed for JavaScript, it can also be used in other environments. In this discussion, we will focus on using it in a Java project built with Gradle.</p>
 </div>
 <div class="paragraph">
-<p>In gradle wird für das Publizieren von Artefakten das <a href="https://docs.gradle.org/current/userguide/publishing_ivy.html">Ivy Publish Plugin</a>
-oder das <a href="https://docs.gradle.org/current/userguide/publishing_maven.html">Maven Publish Plugin</a> verwenden.
-Im Prinzip arbeiten beide Plugins ähnlich und unterscheiden sich vor allem in den verwendeten Metadaten der Repositories.
-Im folgenden wird das Maven Plugin verwendet, da diese Repositories häufig anzutreffen sind.</p>
+<p>In Gradle, the <a href="https://docs.gradle.org/current/userguide/publishing_ivy.html">Ivy Publish Plugin</a> or the <a href="https://docs.gradle.org/current/userguide/publishing_maven.html">Maven Publish Plugin</a> is typically used for publishing artifacts. Both plugins work similarly, mainly differing in the metadata they use for repositories. In the following example, we will use the Maven Plugin, as Maven repositories are commonly encountered.</p>
 </div>
 <div class="paragraph">
-<p>Für eine ein-eindeutige Identifikation der Artefakte werden in gradle die folgenden Properties benötigt:</p>
+<p>For a unique identification of artifacts in Gradle, the following properties are required:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -717,7 +703,7 @@ Im folgenden wird das Maven Plugin verwendet, da diese Repositories häufig anzu
 <p>groupId</p>
 </li>
 <li>
-<p>artefactId</p>
+<p>artifactId</p>
 </li>
 <li>
 <p>version</p>
@@ -725,21 +711,16 @@ Im folgenden wird das Maven Plugin verwendet, da diese Repositories häufig anzu
 </ul>
 </div>
 <div class="paragraph">
-<p>Die Version wird hier von dem Semantic Release Toolset generiert und über die Kommandozeile an gradle übergeben.
-Um dies zu ermöglichen, darf das Version-Property nicht in der build.gradle definiert sein.
-In unserem Beispiel wird dieses Property gar nicht in gradle definiert, die Versionierung erfolgt ausschließlich über das Semantic Release, basierend auf den bereits gesetzten Tags und den Commit-Messages.</p>
+<p>The version is generated by the Semantic Release toolset and passed to Gradle via the command line. To enable this, the version property should not be defined in the build.gradle. In our example, this property is not defined in Gradle at all; versioning is exclusively handled by Semantic Release, based on existing tags and commit messages.</p>
 </div>
 <div class="paragraph">
-<p>Das Semantic Release Toolset verwendet die Datei .releaserc (andere Dateien bzw.
-Formate können <a href="https://semantic-release.gitbook.io/semantic-release/usage/configuration">hier</a>
-eingesehen werden) um den Prozess zu steuern.
-Beispielhaft kann das dann wie folgt aussehen:</p>
+<p>The Semantic Release toolset uses the .releaserc file (other files and formats can be viewed <a href="https://semantic-release.gitbook.io/semantic-release/usage/configuration">here</a>) to control the process. An example configuration might look like this:</p>
 </div>
 <div class="listingblock">
 <div class="title">releaserc</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="json"><span class="p">{</span><span class="w">
-    </span><span class="nl">"branches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"master"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"branches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"main"</span><span class="p">],</span><span class="w">
     </span><span class="nl">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"@semantic-release/commit-analyzer"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"@semantic-release/release-notes-generator"</span><span class="p">,</span><span class="w">
@@ -763,12 +744,10 @@ Beispielhaft kann das dann wie folgt aussehen:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>In der oben aufgeführten Konfiguration sind einige Plugins des Semantic Release Toolset konfiguriert.
-Hervorzuheben sind das <a href="https://github.com/semantic-release/github">github-Plugin</a> und das <a href="https://github.com/semantic-release/exec">exec-Plugin</a>.</p>
+<p>The above configuration includes some plugins from the Semantic Release toolset. Notable plugins are the <a href="https://github.com/semantic-release/github">github-Plugin</a> and the <a href="https://github.com/semantic-release/exec">exec-Plugin</a>.</p>
 </div>
 <div class="paragraph">
-<p>Das exec-Plugin ruft in der Konfiguration in der "prepare"-Phase das Skript release-files.sh mit der erzeugten Versionsnummer auf.
-In diesem Skript wird der <a href="https://docs.gradle.org/current/userguide/publishing_maven.html">publish-Task</a> von gradle mit der übergebenen Versionsnummer aufgerufen und somit die in der gradle.build.kts angegebenen Artefakte versioniert und dann publiziert.</p>
+<p>In the configuration, the exec-Plugin calls the release-files.sh script with the generated version number during the "prepare" phase. In this script, Gradle&#8217;s <a href="https://docs.gradle.org/current/userguide/publishing_maven.html">publish-Task</a> is invoked with the provided version number, versioning the artifacts specified in build.gradle.kts and then publishing them.</p>
 </div>
 <div class="listingblock">
 <div class="title">release-files.sh</div>
@@ -779,8 +758,7 @@ In diesem Skript wird der <a href="https://docs.gradle.org/current/userguide/pub
 </div>
 </div>
 <div class="paragraph">
-<p>Über das github-Plugin werden durch gradle erzeugte Artefakte an das github-Release gehängt.
-Die angegebenen Dateien können dann über den Release-Tab des github-Projekts eingesehen werden.</p>
+<p>The github-Plugin attaches artifacts generated by Gradle to the GitHub release. The specified files can then be viewed through the Release tab of the GitHub project.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -788,18 +766,13 @@ Die angegebenen Dateien können dann über den Release-Tab des github-Projekts e
 </div>
 </div>
 <div class="paragraph">
-<p>Um das Semantic Release in einem gradle-basierten Prozess nutzen zu können, muss zuerst npm installiert werden.
-Weiterhin muss damit dann das Semantic Release und Plugins installiert werden.
-Dies kann über <code>npm install conventional-changelog-conventionalcommits @semantic-release/exec</code>
-passieren.
-Mit <code>npx</code>, einer Laufzeitumgebung für Node Pakete, kann das Release über den Befehl <code>npx semantic-release</code>
-erzeugt werden.</p>
+<p>To use Semantic Release in a Gradle-based process, npm must first be installed. Additionally, Semantic Release and plugins must be installed with the command <code>npm install conventional-changelog-conventionalcommits @semantic-release/exec</code>. Finally, the release can be generated using <code>npx semantic-release</code> through npx, a runtime environment for Node packages.</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.1.0<br>
-Last updated 2023-09-26 13:25:28 UTC
+Version 2.0.0<br>
+Last updated 2023-09-28 17:20:36 UTC
 </div>
 </div>
 </body>
