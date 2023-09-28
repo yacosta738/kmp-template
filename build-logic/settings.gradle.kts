@@ -5,3 +5,5 @@ dependencyResolutionManagement {
         }
     }
 }
+
+rootProject.name = "kmp-template-build-logic"

@@ -1,28 +1,28 @@
 [versions]
 
-kotlin = "1.9.0"
-dokka = "1.8.20"
+kotlin = "1.9.10"
+dokka = "1.9.0"
 detekt = "1.23.1"
-sonarqubeGradlePlugin = "4.3.1.3277"
+sonarqubeGradlePlugin = "4.4.0.3356"
 jacoco = "0.8.10"
 #Testing
-mockk = "1.13.7"
-junit = "5.9.3"
+mockk = "1.13.8"
+junit = "5.10.0"
 kotest = "5.7.2"
-assertk-jvm = "0.24"
+assertk-jvm = "0.27.0"
 owasp = "8.4.0"
 asciidoctor = "4.0.0-alpha.1"
 gradle-git-properties = "2.4.1"
-docker-plugin = "9.1.0"
+docker-plugin = "9.3.3"
 # Utilities
 apache-commons = "1.10.0"
-kotlin-logging = "3.0.4"
+kotlin-logging = "3.0.5"
 
 
 [libraries]
 # project dependencies
 
-# buildSrc dependencies (plugins)
+# Dependencies (plugins)
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin" }
 kotlin-noarg = { module = "org.jetbrains.kotlin:kotlin-noarg", version.ref = "kotlin" }

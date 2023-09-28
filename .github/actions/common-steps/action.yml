@@ -1,6 +1,6 @@
 name: Common Steps
 
-description: Common steps for Katana workflows
+description: Common steps for KMP Template workflows
 
 runs:
   using: composite
@@ -11,6 +11,6 @@ runs:
         distribution: temurin
         java-version: 17
     - name: ⚙️Setup Gradle 🐘
-      uses: gradle/gradle-build-action@v2.8.0
+      uses: gradle/gradle-build-action@v2.8.1
       with:
         dependency-graph: generate-and-submit

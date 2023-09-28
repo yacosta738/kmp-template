@@ -1,7 +1,7 @@
 plugins {
     idea
     base
-    id("org.jetbrains.dokka")
+    id("io.kmptemplate.kotlin-common-conventions")
 
     // due to late-binding not working, aggregation should define tasks doc-consumer
     id("io.kmptemplate.aggregation-conventions")
@@ -11,17 +11,12 @@ plugins {
     id("io.kmptemplate.documentation.documentation-consumer-conventions")
 
     id("io.kmptemplate.verification.sonarqube-conventions")
-    id("com.gorylenko.gradle-git-properties")
+    id("io.kmptemplate.gradle-git-properties-conventions")
 }
 
 idea {
     module.isDownloadJavadoc = true
     module.isDownloadSources = true
-}
-
-gitProperties {
-    failOnNoGitDirectory = false
-    keys = listOf("git.branch", "git.commit.id.abbrev", "git.commit.id.describe")
 }
 
 allprojects {

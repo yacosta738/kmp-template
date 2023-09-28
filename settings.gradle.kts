@@ -3,13 +3,20 @@ import org.gradle.kotlin.dsl.support.listFilesOrdered
 rootProject.name = "kmp-template"
 
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         gradlePluginPortal()
         mavenCentral()
     }
 }
 
+plugins {
+    id("com.gradle.enterprise") version ("3.15")
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
+}
+
 fun includeProject(dir: File) {
+    println("Loading submodule \uD83D\uDCE6: ${dir.name}")
     include(dir.name)
     val prj = project(":${dir.name}")
     prj.projectDir = dir
@@ -28,3 +35,16 @@ fun includeProjectsInDir(dirName: String) {
 val projects = listOf("apps", "shared")
 projects.forEach { includeProjectsInDir(it) }
 includeProject(file("documentation"))
+
+if (!System.getenv("CI").isNullOrEmpty() && !System.getenv("BUILD_SCAN_TOS_ACCEPTED").isNullOrEmpty()) {
+    gradleEnterprise {
+        buildScan {
+            termsOfServiceUrl = "https://gradle.com/terms-of-service"
+            termsOfServiceAgree = "yes"
+            tag("CI")
+        }
+    }
+}
+
+enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

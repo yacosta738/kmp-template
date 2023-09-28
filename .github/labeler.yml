@@ -1,0 +1,45 @@
+# Add 'repo' label to any root file changes
+repo:
+    - '*'
+# Add '@applications' label to any change within the 'apps' directory
+applications:
+    - 'apps/**'
+# Add '@modules' label to any change within the 'libs' directory
+modules:
+    - 'shared/**'
+# Add 'test' label to any change to a test file
+test:
+    - '**/*.spec.ts'
+    - '**/src/test/**'
+
+# Add 'source' label to any change to src files within the source dir EXCEPT for the docs sub-folder
+source:
+    -   any: [ '**/src/**/*', '!**/src/docs/**/*' ]
+
+# Add 'frontend` label to any change to *.js, *.ts or *.tsx files within the source dir
+frontend:
+    -   any: [ 'src/**/*.js', 'src/**/*.ts', 'src/**/*.tsx' ]
+
+# Add 'backend` label to any change to *.java files within the source dir
+backend:
+    -   any: [ 'src/**/*.java', 'src/**/*.kt' ]
+
+# Add 'docs' label to any change to *.md files within the source dir
+docs:
+    -   any: [ 'src/**/*.md' ]
+    -   'documentation/**'
+# Add 'config' label to any change to *.yml or *.properties files within the source dir
+config:
+    -   any: [ 'src/**/*.yml', 'src/**/*.properties' ]
+
+# Add 'build' label to any change to *.gradle files within the source dir
+build:
+    -   any: [ 'src/**/*.gradle' ]
+
+# Add 'infra' label to any change to *.yml files within the infra dir
+infra:
+    -   any: [ 'infra/**/*.yml' ]
+
+# Add 'dependencies' label to any change to package.json, package-lock.json or libs.versions.toml files within the source dir
+dependencies:
+    -   any: [ 'src/**/package.json', 'src/**/package-lock.json', 'gradle/libs.versions.toml' ]

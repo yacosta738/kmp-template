@@ -3,183 +3,223 @@ name: CI Build
 on: [ push ]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 env:
-  TZ: UTC
+    TZ: UTC
+    BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
 
 permissions:
-  contents: write
-  pull-requests: write
+    contents: write
+    pull-requests: write
 
 jobs:
-  compile:
-    name: 💻 Compile
-    runs-on: ubuntu-latest
+    compile:
+        name: 💻 Compile
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: 🔄 Checkout
-        uses: actions/checkout@v2
+        steps:
+            -   name: 🔄 Checkout
+                uses: actions/checkout@v4
 
-      - name: ⚙️ Common Steps for all jobs
-        uses: ./.github/actions/common-steps
+            -   name: ⚙️ Common Steps for all jobs
+                uses: ./.github/actions/common-steps
 
-      - name: 💻 Compile
-        run: ./gradlew clean classes testClasses testIntegrationClasses
+            -   name: 💻 Compile
+                run: ./gradlew clean classes testClasses testIntegrationClasses
 
-  tests:
-    name: Tests
-    needs: compile
-    runs-on: ubuntu-latest
+    tests:
+        name: Tests
+        needs: compile
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: 🔄 Checkout
-        uses: actions/checkout@v2
-      - name: ⚙️ Common Steps for all jobs
-        uses: ./.github/actions/common-steps
-      - name: 🧪 Run tests
-        run: ./gradlew clean check sonar aggregateReports
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: 📑 Upload documentation results
-        uses: actions/upload-artifact@v2
-        with:
-          name: documentation
-          path: build/documentation
+        steps:
+            -   name: 🔍 BOT_TOKEN
+                if: env.BOT_TOKEN == ''
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                run: echo "BOT_TOKEN=${GITHUB_TOKEN}" >> $GITHUB_ENV
+            -   name: 🔄 Checkout
+                uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
+                    token: ${{ env.BOT_TOKEN }}
+            -   name: ⚙️ Common Steps for all jobs
+                uses: ./.github/actions/common-steps
+            -   name: 🧪 Run tests
+                run: ./gradlew clean check sonar aggregateReports --scan
+                env:
+                    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            -   name: 🟡 Add build scan URL as PR comment
+                uses: actions/github-script@v6
+                if: github.event_name == 'pull_request' && failure()
+                with:
+                    github-token: ${{env.BOT_TOKEN}}
+                    script: |
+                        github.rest.issues.createComment({
+                          issue_number: context.issue.number,
+                          owner: context.repo.owner,
+                          repo: context.repo.repo,
+                          body: '❌ ${{ github.workflow }} failed: ${{ steps.gradle.outputs.build-scan-url }}'
+                        })
+            -   name: 💫 Generate JaCoCo Badge
+                uses: cicirello/jacoco-badge-generator@v2
+                with:
+                    generate-branches-badge: true
+                    jacoco-csv-file: build/reports/jacoco/aggregateJacocoTestReport/aggregateJacocoTestReport.csv
 
-  security:
-    name: 🔒Security Checks
-    runs-on: ubuntu-latest
+            -   name: 📄 Log coverage percentage
+                run: |
+                    echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
+                    echo "branch coverage = ${{ steps.jacoco.outputs.branches }}"
 
-    steps:
-      - name: 🔄 Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+            -   name: ❇️Commit and push the badge (if it changed)
+                if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' && github.event.head_commit.author.username != 'github-actions'
+                uses: EndBug/add-and-commit@v9
+                with:
+                    default_author: github_actions
+                    message: 'commit badge 🍀 ${{ steps.jacoco.outputs.coverage }} %'
+                    github_token: ${{ env.BOT_TOKEN }}
+            -   name: 📑 Upload documentation results
+                uses: actions/upload-artifact@v3
+                with:
+                    name: documentation
+                    path: build/documentation
 
-      - name: ⚙️ Common Steps for all jobs
-        uses: ./.github/actions/common-steps
+    security:
+        name: 🔒Security Checks
+        runs-on: ubuntu-latest
 
-      - name: 🛡️Check OWASP
-        run: ./gradlew clean dependencyCheckAnalyze
-      - name: ️🛡️⬆️ Upload owasp-report results
-        uses: actions/upload-artifact@v2
-        with:
-          name: owasp-reports
-          path: build/reports/owasp
-      - name: 🏗️ 📦 Build package
-        run: ./gradlew clean assemble dockerCreateDockerfile -x test -x integrationTest
-      - name: 🏗️ 🐳 Build Container Image
-        uses: docker/build-push-action@v5
-        with:
-            context: ./apps/app/build/docker/
-            file: ./apps/app/build/docker/Dockerfile
-            push: false
-            tags: n4t5u/yacosta738/kmp-template:latest
-      - name: 🔍 🪪 Scan container using trivy
-        id: scan
-        uses: azure/container-scan@v0
-        with:
-            image-name: n4t5u/yacosta738/kmp-template:latest
+        steps:
+            -   name: 🔄 Checkout
+                uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
 
-  release:
-    name: 🚀 Release
-    needs: [ tests, security ]
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+            -   name: ⚙️ Common Steps for all jobs
+                uses: ./.github/actions/common-steps
 
-    steps:
-      - name: 🔄 Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+            -   name: 🛡️Check OWASP
+                run: ./gradlew clean dependencyCheckAnalyze
+            -   name: ️🛡️⬆️ Upload owasp-report results
+                uses: actions/upload-artifact@v3
+                with:
+                    name: owasp-reports
+                    path: build/reports/owasp
+            -   name: 🏗️ 📦 Build package
+                run: ./gradlew clean assemble dockerCreateDockerfile -x test -x integrationTest
+            -   name: 🏗️ 🐳 Build Container Image
+                uses: docker/build-push-action@v5
+                with:
+                    context: ./apps/app/build/docker/
+                    file: ./apps/app/build/docker/Dockerfile
+                    push: false
+                    tags: n4t5u/yacosta738/kmp-template:latest
+            -   name: 🔍 🪪 Scan container using trivy
+                id: scan
+                uses: azure/container-scan@v0
+                with:
+                    image-name: n4t5u/yacosta738/kmp-template:latest
 
-      - name: ⚙️ Common Steps for all jobs
-        uses: ./.github/actions/common-steps
+    release:
+        name: 🚀 Release
+        needs: [ tests, security ]
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
 
-      - name: 🏗️ 📦 Build package
-        run: ./gradlew assemble -x test -x integrationTest
-      - name: 🟢 Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-      - name: 🧩 Add plugin for conventional commits
-        run: npm install conventional-changelog-conventionalcommits @semantic-release/exec
-        working-directory: ./.github/workflows
-      - name: 🚀 🟣 Release to GitHub
-        working-directory: ./.github/workflows
-        run: npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    outputs:
-      revnumber: ${{ env.revnumber }}
+        steps:
+            -   name: 🔄 Checkout
+                uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
 
-  build-publish-docker:
-    name: 🚢 🐳 Build and Publish Docker Image
-    needs: release
-    runs-on: ubuntu-latest
+            -   name: ⚙️ Common Steps for all jobs
+                uses: ./.github/actions/common-steps
 
-    steps:
-      - name: 🔄 Checkout
-        uses: actions/checkout@v2
+            -   name: 🏗️ 📦 Build package
+                run: ./gradlew assemble --scan -x test -x integrationTest
+            -   name: 🟢 Setup Node.js
+                uses: actions/setup-node@v3
+                with:
+                    node-version: 'lts/*'
+                    cache: 'npm'
+            -   name: 🧩 Add plugin for conventional commits
+                run: npm install conventional-changelog-conventionalcommits @semantic-release/exec
+                working-directory: ./.github/workflows
+            -   name: 🚀 🟣 Release to GitHub
+                working-directory: ./.github/workflows
+                run: npx semantic-release
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        outputs:
+            revnumber: ${{ env.revnumber }}
 
-      - name: ⚙️ Common Steps for all jobs
-        uses: ./.github/actions/common-steps
+    build-publish-docker:
+        name: 🚢 🐳 Build and Publish Docker Image
+        needs: release
+        runs-on: ubuntu-latest
 
-      - name: 🏗️ 📦 Build package
-        run: ./gradlew clean assemble dockerCreateDockerfile -x test -x integrationTest
+        steps:
+            -   name: 🔄 Checkout
+                uses: actions/checkout@v4
 
-      - name: 🎯 Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      - name: 🎯 Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: 🏗️ Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: ./apps/app/build/docker/
-          file: ./apps/app/build/docker/Dockerfile
-          push: true
-          tags: |
-            n4t5u/kmp-template:latest
-            n4t5u/kmp-template:${{ needs.release.outputs.revnumber }}
+            -   name: ⚙️ Common Steps for all jobs
+                uses: ./.github/actions/common-steps
 
-  publish-docs:
-    name: 🔵 📄 Publish Docs
-    needs: release
-    runs-on: ubuntu-latest
+            -   name: 🏗️ 📦 Build package
+                run: ./gradlew clean assemble dockerCreateDockerfile -x test -x integrationTest
 
-    steps:
-      - name: 🔄 Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: ⚙️ Common Steps for all jobs
-        uses: ./.github/actions/common-steps
-      - name: ⬇️ 📜 Download documentation reports
-        uses: actions/download-artifact@v2
-        with:
-          name: documentation
-          path: build/documentation
-      - name: ⬇️ 🛡️ Download owasp reports
-        uses: actions/download-artifact@v2
-        with:
-          name: owasp-reports
-          path: build/reports/owasp
-      - name: 📚 Aggregate Documentation
-        run: ./gradlew aggregateDocumentation
-        env:
-          revnumber: ${{ needs.release.outputs.revnumber }}
-      - name: 🟢 📚 Publish documentation
-        uses: JamesIves/github-pages-deploy-action@v4.2.3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build/documentation
-          CLEAN: true
+            -   name: 🎯 Set up QEMU
+                uses: docker/setup-qemu-action@v3
+            -   name: 🎯 Set up Docker Buildx
+                uses: docker/setup-buildx-action@v3
+            -   name: Login to Docker Hub
+                uses: docker/login-action@v3
+                with:
+                    username: ${{ secrets.DOCKERHUB_USERNAME }}
+                    password: ${{ secrets.DOCKERHUB_TOKEN }}
+            -   name: 🏗️ Build and push
+                uses: docker/build-push-action@v5
+                with:
+                    context: ./apps/app/build/docker/
+                    file: ./apps/app/build/docker/Dockerfile
+                    push: true
+                    tags: |
+                        n4t5u/kmp-template:latest
+                        n4t5u/kmp-template:${{ needs.release.outputs.revnumber }}
+
+    publish-docs:
+        name: 🔵 📄 Publish Docs
+        needs: release
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: 🔄 Checkout
+                uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
+            -   name: ⚙️ Common Steps for all jobs
+                uses: ./.github/actions/common-steps
+            -   name: ⬇️ 📜 Download documentation reports
+                uses: actions/download-artifact@v3
+                with:
+                    name: documentation
+                    path: build/documentation
+            -   name: ⬇️ 🛡️ Download owasp reports
+                uses: actions/download-artifact@v3
+                with:
+                    name: owasp-reports
+                    path: build/reports/owasp
+            -   name: 📚 Aggregate Documentation
+                run: ./gradlew aggregateDocumentation
+                env:
+                    revnumber: ${{ needs.release.outputs.revnumber }}
+            -   name: 🟢 📚 Publish documentation
+                uses: JamesIves/github-pages-deploy-action@v4.4.3
+                with:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                    BRANCH: gh-pages
+                    FOLDER: build/documentation
+                    CLEAN: true
