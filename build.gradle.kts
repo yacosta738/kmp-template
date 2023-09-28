@@ -1,7 +1,7 @@
 plugins {
     idea
     base
-    id("io.kmptemplate.dokka-conventions")
+    id("io.kmptemplate.kotlin-common-conventions")
 
     // due to late-binding not working, aggregation should define tasks doc-consumer
     id("io.kmptemplate.aggregation-conventions")

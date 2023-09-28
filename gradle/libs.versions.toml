@@ -22,7 +22,7 @@ kotlin-logging = "3.0.5"
 [libraries]
 # project dependencies
 
-# buildSrc dependencies (plugins)
+# Dependencies (plugins)
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin" }
 kotlin-noarg = { module = "org.jetbrains.kotlin:kotlin-noarg", version.ref = "kotlin" }
