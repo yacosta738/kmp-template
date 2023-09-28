@@ -144,7 +144,6 @@ jobs:
                 uses: actions/setup-node@v3
                 with:
                     node-version: 'lts/*'
-                    cache: 'npm'
             -   name: 🧩 Add plugin for conventional commits
                 run: npm install conventional-changelog-conventionalcommits @semantic-release/exec
                 working-directory: ./.github/workflows
