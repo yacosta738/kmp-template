@@ -1,9 +1,21 @@
+rootProject.name = "build-logic"
+
 dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
     versionCatalogs {
-        create("libs") {
+        register("libs") {
             from(files("../gradle/libs.versions.toml"))
         }
     }
 }
 
-rootProject.name = "kmp-template-build-logic"
+// Keep in sync with ../settings.gradle.kts
+buildCache {
+    local {
+        directory = rootDir.parentFile.resolve(".gradle/build-cache")
+    }
+}
