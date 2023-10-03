@@ -2,17 +2,34 @@ import org.gradle.kotlin.dsl.support.listFilesOrdered
 
 rootProject.name = "kmp-template"
 
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        google()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+    }
+}
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
-        gradlePluginPortal()
         mavenCentral()
+        google()
+        gradlePluginPortal()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
 
 plugins {
-    id("com.gradle.enterprise") version ("3.15")
+    id("com.gradle.enterprise") version "3.15"
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
+}
+
+// Keep in sync with build-logic/settings.gradle.kts
+buildCache {
+    local {
+        directory = rootDir.resolve(".gradle/build-cache")
+    }
 }
 
 fun includeProject(dir: File) {

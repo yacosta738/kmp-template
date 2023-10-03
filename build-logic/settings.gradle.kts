@@ -19,3 +19,10 @@ buildCache {
         directory = rootDir.parentFile.resolve(".gradle/build-cache")
     }
 }
+
+include(":common")
+include(":analysis-convention")
+include(":android-convention")
+include(":gradle-convention")
+include(":documentation-convention")
+include(":multiplatform-convention")
