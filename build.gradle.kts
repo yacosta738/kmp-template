@@ -6,7 +6,6 @@ plugins {
     id("app.owasp.dependency.check")
     id("app.kover")
     id("app.sonar")
-    id("app.documentation.common")
     id("app.documentation.consumer")
     alias(libs.plugins.compose) apply false
 }

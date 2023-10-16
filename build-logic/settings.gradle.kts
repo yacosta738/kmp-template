@@ -23,6 +23,7 @@ buildCache {
 include(":common")
 include(":analysis-convention")
 include(":android-convention")
+include(":desktop-convention")
 include(":gradle-convention")
 include(":documentation-convention")
 include(":multiplatform-convention")

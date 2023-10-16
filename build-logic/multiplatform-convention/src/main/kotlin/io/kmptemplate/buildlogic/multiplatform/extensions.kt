@@ -30,7 +30,7 @@ internal fun KotlinMultiplatformExtension.configureCocoapods(project: Project) {
     configureExtension<CocoapodsExtension> {
         name = podName
         homepage = "https://github.com/yacosta738/kmp-template"
-        podfile = project.file("${project.rootDir}/iosApp/Podfile")
+        podfile = project.file("${project.rootDir}/apps/iosApp/Podfile")
         summary = "Cocoapod $podName module"
         version = AppConfiguration.versionName
         ios.deploymentTarget = "14.1"

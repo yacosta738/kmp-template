@@ -16,10 +16,6 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("documentation-common") {
-            id = "app.documentation.common"
-            implementationClass = "io.kmptemplate.buildlogic.documentation.AppDocumentationPlugin"
-        }
         register("documentation-producer") {
             id = "app.documentation.producer"
             implementationClass = "io.kmptemplate.buildlogic.documentation.AppDocumentationProducerPlugin"

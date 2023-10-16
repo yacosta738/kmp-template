@@ -16,6 +16,8 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 
+private const val PACKAGE_NAME = "${AppConfiguration.packageName}.android"
+
 internal class AppAndroidApplicationPlugin : ConventionPlugin {
     override fun Project.configure() {
         apply(plugin = "com.android.application")
@@ -36,10 +38,10 @@ internal class AppAndroidApplicationPlugin : ConventionPlugin {
 
     @Suppress("StringLiteralDuplication")
     private fun BaseAppModuleExtension.configureApp(project: Project) {
-        configureAndroid(AppConfiguration.packageName)
+        configureAndroid(PACKAGE_NAME)
         val rootProject = project.rootProject
 
-        defaultConfig.applicationId = AppConfiguration.packageName
+        defaultConfig.applicationId = PACKAGE_NAME
         lint.abortOnError = false
 
         with(packagingOptions.resources.excludes) {

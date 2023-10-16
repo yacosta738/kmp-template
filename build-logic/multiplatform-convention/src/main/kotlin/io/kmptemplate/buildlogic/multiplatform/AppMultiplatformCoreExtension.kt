@@ -5,6 +5,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
+import org.jetbrains.kotlin.gradle.plugin.extraProperties
 
 open class AppMultiplatformCoreExtension @Inject constructor(project: Project) {
     private val multiplatformProject by lazy {

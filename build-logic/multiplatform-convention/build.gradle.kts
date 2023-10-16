@@ -31,6 +31,10 @@ gradlePlugin {
             id = "app.multiplatform.compose"
             implementationClass = "io.kmptemplate.buildlogic.multiplatform.AppMultiplatformComposePlugin"
         }
+        register("multiplatform-desktop") {
+            id = "app.multiplatform.desktop"
+            implementationClass = "io.kmptemplate.buildlogic.multiplatform.AppMultiplatformDesktopPlugin"
+        }
         register("multiplatform-tests") {
             id = "app.multiplatform.tests"
             implementationClass = "io.kmptemplate.buildlogic.multiplatform.AppMultiplatformTestsPlugin"

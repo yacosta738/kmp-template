@@ -1,0 +1,6 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SentryPrivate.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sharedCommonCore.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sharedDomainGreeting.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sharedUiBase.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sharedUiMain.framework

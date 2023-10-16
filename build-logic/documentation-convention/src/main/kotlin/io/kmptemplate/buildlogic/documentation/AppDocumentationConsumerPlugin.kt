@@ -13,10 +13,10 @@ import org.gradle.api.tasks.TaskProvider
 import org.gradle.kotlin.dsl.*
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.owasp.dependencycheck.gradle.extension.DependencyCheckExtension
-import org.owasp.dependencycheck.gradle.tasks.Aggregate
 
 internal class AppDocumentationConsumerPlugin : ConventionPlugin {
     override fun Project.configure() {
+        apply(plugin = "org.jetbrains.dokka")
 
         val asciidoc by configurations.creating {
             isCanBeResolved = true
