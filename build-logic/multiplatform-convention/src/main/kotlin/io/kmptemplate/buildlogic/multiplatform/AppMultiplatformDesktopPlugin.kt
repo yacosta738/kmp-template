@@ -1,21 +1,20 @@
 package io.kmptemplate.buildlogic.multiplatform
 
-import io.kmptemplate.buildlogic.*
-import java.io.File
+import io.kmptemplate.buildlogic.ConventionPlugin
+import io.kmptemplate.buildlogic.catalogBundle
+import io.kmptemplate.buildlogic.catalogLib
+import io.kmptemplate.buildlogic.commonExtensions
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
 import org.gradle.kotlin.dsl.*
-import org.jetbrains.compose.ComposeExtension
 import org.jetbrains.compose.ComposePlugin
 import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-import org.jetbrains.kotlin.gradle.plugin.*
 
 internal class AppMultiplatformDesktopPlugin : ConventionPlugin {
     override fun Project.configure() {
         apply(plugin = "org.jetbrains.kotlin.multiplatform")
         apply(plugin = "org.jetbrains.compose")
-        apply(plugin = "org.jetbrains.compose.desktop")
 
         with(extensions) {
             create<AppMultiplatformDesktopExtension>(APP_MULTIPLATFORM_EXTENSION)

@@ -9,7 +9,6 @@ dependencies {
     implementation(libs.gradle.compose)
     implementation(libs.gradle.kotlin)
     implementation(project(":common"))
-//    implementation(project(":multiplatform-convention"))
 }
 
 gradlePlugin {

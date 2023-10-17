@@ -3,12 +3,11 @@ package io.kmptemplate.ui.main
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import io.kmptemplate.domain.Greeting
 import io.kmptemplate.ui.base.design.ApplicationTheme
+import io.kmptemplate.ui.main.view.GreetingView
 
 @Composable
 fun KmpTemplateApp(){
@@ -19,18 +18,5 @@ fun KmpTemplateApp(){
         ) {
             GreetingView(Greeting().greet())
         }
-    }
-}
-
-@Composable
-fun GreetingView(text: String) {
-    Text(text = text)
-}
-
-@Preview
-@Composable
-fun DefaultPreview() {
-    ApplicationTheme {
-        GreetingView("Hello, Android!")
     }
 }
