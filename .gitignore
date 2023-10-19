@@ -230,7 +230,13 @@ gradle-app.setting
 /node_modules/
 /dependency-graph-reports/
 
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+
 # iosApp dependencies
+iosApp.xcconfig
 apps/iosApp/Podfile.lock
 apps/iosApp/Pods/*
 apps/iosApp/iosApp.xcworkspace/*
@@ -241,3 +247,4 @@ local.properties
 sentry.properties
 
 kmp-template.jks
+kmp-template.keystore
