@@ -1,4 +1,5 @@
 package io.kmptemplate.desktop
+
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -8,8 +9,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
-
 import io.kmptemplate.domain.Greeting
+
 @Composable
 @Preview
 fun App() {

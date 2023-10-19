@@ -14,7 +14,7 @@ internal class AppDesktopApplicationPlugin : ConventionPlugin {
         apply(plugin = "org.jetbrains.kotlin.jvm")
         apply(plugin = "org.jetbrains.compose")
         apply(plugin = "app.sonar.kotlin")
-        apply(plugin = "app.sentry")
+//        apply(plugin = "app.sentry")
 
         with(extensions) {
             commonExtensions()

@@ -1,11 +1,10 @@
 package io.kmptemplate.buildlogic.multiplatform
 
-import javax.inject.Inject
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
-import org.jetbrains.kotlin.gradle.plugin.extraProperties
+import javax.inject.Inject
 
 open class AppMultiplatformCoreExtension @Inject constructor(project: Project) {
     private val multiplatformProject by lazy {

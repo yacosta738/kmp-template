@@ -2,19 +2,9 @@ package io.kmptemplate.buildlogic.multiplatform
 
 import com.android.build.gradle.LibraryExtension
 import com.github.gmazzo.gradle.plugins.BuildConfigExtension
-import io.kmptemplate.buildlogic.ConventionPlugin
-import io.kmptemplate.buildlogic.catalogBundle
-import io.kmptemplate.buildlogic.commonExtensions
-import io.kmptemplate.buildlogic.commonTasks
-import io.kmptemplate.buildlogic.configureAndroid
-import io.kmptemplate.buildlogic.fullPackageName
+import io.kmptemplate.buildlogic.*
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.apply
-import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.create
-import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.getValue
-import org.gradle.kotlin.dsl.getting
+import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
@@ -122,6 +112,6 @@ internal class AppMultiplatformMobilePlugin : ConventionPlugin {
     }
 
     private companion object {
-        const val BUILD_CONFIG_FILE = "AppBuildConfig"
+        const val BUILD_CONFIG_FILE = "ApplicationBuildConfig"
     }
 }

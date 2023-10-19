@@ -59,6 +59,10 @@ kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-p
 compose-compiler = { module = "org.jetbrains.compose.compiler:compiler", version = "1.5.2" }
 compose-material3-windowsize = { module = "dev.chrisbanes.material3:material3-window-size-class-multiplatform", version = "0.3.1" }
 
+
+# Kermit
+kermit = { module = "co.touchlab:kermit", version = "2.0.1" }
+
 # Arrow
 arrow = { module = "io.arrow-kt:arrow-core", version = "1.2.1" }
 
@@ -173,7 +177,8 @@ mobile-common = [
     "coroutines",
     "koin",
     "kotlin",
-    "kotlin-immutable"
+    "kotlin-immutable",
+    "kermit"
 ]
 mobile-android = [
     "koin-android",

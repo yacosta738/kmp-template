@@ -17,6 +17,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
 import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.util.*
 
 private val Project.libs get() = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
@@ -114,6 +115,9 @@ fun TaskContainer.commonTasks() {
         compilerOptions.configureKotlin()
     }
 }
+
+fun Properties.getValue(key: String, env: String) =
+    getOrElse(key) { System.getenv(env) } as? String
 
 private fun KotlinJvmCompilerOptions.configureKotlin() {
     jvmTarget.set(AppConfiguration.jvmTarget)

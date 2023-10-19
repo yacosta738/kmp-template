@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
     spec.source                   = { :http=> ''}
     spec.authors                  = ''
     spec.license                  = ''
-    spec.summary                  = 'Cocoapod sharedUiMain module'
+    spec.summary                  = 'Cocoapod sharedUiMain module for KMP Template'
     spec.vendored_frameworks      = 'build/cocoapods/framework/sharedUiMain.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target = '14.1'

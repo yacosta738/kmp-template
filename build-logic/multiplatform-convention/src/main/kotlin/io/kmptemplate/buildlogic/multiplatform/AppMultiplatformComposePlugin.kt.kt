@@ -3,18 +3,14 @@ package io.kmptemplate.buildlogic.multiplatform
 import io.kmptemplate.buildlogic.ConventionPlugin
 import io.kmptemplate.buildlogic.catalogBundle
 import io.kmptemplate.buildlogic.catalogLib
-import java.io.File
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
-import org.gradle.kotlin.dsl.apply
-import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.getValue
-import org.gradle.kotlin.dsl.getting
+import org.gradle.kotlin.dsl.*
 import org.jetbrains.compose.ComposeExtension
 import org.jetbrains.compose.ComposePlugin
 import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import java.io.File
 
 internal class AppMultiplatformComposePlugin : ConventionPlugin {
     override fun Project.configure() {

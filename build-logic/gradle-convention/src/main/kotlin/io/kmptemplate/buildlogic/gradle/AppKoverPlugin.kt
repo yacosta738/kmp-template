@@ -17,12 +17,7 @@ import org.gradle.kotlin.dsl.withType
 internal class AppKoverPlugin : ConventionPlugin {
     private val classesExcludes = listOf(
         // App
-        "*.KatanaApp",
         "*.*Initializer",
-
-        // Apollo
-        "*.remote.*.*Mutation*",
-        "*.remote.*.*Query*",
 
         // Common Android
         "*.BuildConfig",
@@ -49,14 +44,10 @@ internal class AppKoverPlugin : ConventionPlugin {
         "*.remote.*.selections",
         "*.remote.*.type",
     )
-    // TODO: Add the real modules here
     private val containerModules = listOf(
-        ":common",
-        ":data",
-        ":data:preferences",
-        ":data:remote",
-        ":domain",
-        ":ui",
+        ":shared:common",
+        ":shared:domain",
+        ":shared:ui",
     )
 
     override fun Project.configure() {

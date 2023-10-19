@@ -2,19 +2,13 @@ package io.kmptemplate.buildlogic.android
 
 import com.android.build.api.dsl.ApplicationBuildType
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
-import io.kmptemplate.buildlogic.ConventionPlugin
-import io.kmptemplate.buildlogic.AppConfiguration
-import io.kmptemplate.buildlogic.catalogBundle
-import io.kmptemplate.buildlogic.commonExtensions
-import io.kmptemplate.buildlogic.commonTasks
-import io.kmptemplate.buildlogic.configureAndroid
-import io.kmptemplate.buildlogic.implementation
-import java.io.FileInputStream
-import java.util.Properties
+import io.kmptemplate.buildlogic.*
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import java.io.FileInputStream
+import java.util.*
 
 private const val PACKAGE_NAME = "${AppConfiguration.packageName}.android"
 
@@ -107,7 +101,4 @@ internal class AppAndroidApplicationPlugin : ConventionPlugin {
         isShrinkResources = !isDebug
         enableUnitTestCoverage = isDebug
     }
-
-    private fun Properties.getValue(key: String, env: String) =
-        getOrElse(key) { System.getenv(env) } as? String
 }

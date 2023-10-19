@@ -1,7 +1,6 @@
 package io.kmptemplate.buildlogic.multiplatform
 
 import io.kmptemplate.buildlogic.AppConfiguration
-import java.util.Locale
 import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
@@ -9,6 +8,7 @@ import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.plugin.cocoapods.CocoapodsExtension
+import java.util.*
 
 internal fun KotlinMultiplatformExtension.configureSourceSets(
     block: NamedDomainObjectContainer<KotlinSourceSet>.() -> Unit
@@ -31,7 +31,7 @@ internal fun KotlinMultiplatformExtension.configureCocoapods(project: Project) {
         name = podName
         homepage = "https://github.com/yacosta738/kmp-template"
         podfile = project.file("${project.rootDir}/apps/iosApp/Podfile")
-        summary = "Cocoapod $podName module"
+        summary = "Cocoapod $podName module for KMP Template"
         version = AppConfiguration.versionName
         ios.deploymentTarget = "14.1"
 
@@ -39,6 +39,7 @@ internal fun KotlinMultiplatformExtension.configureCocoapods(project: Project) {
 
         framework {
             baseName = podName
+            isStatic = false
         }
     }
 }

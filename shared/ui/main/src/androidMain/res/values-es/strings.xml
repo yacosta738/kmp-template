@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name="main_introduction_text"> Esto es un ejemplo de un Scaffold. Utiliza los parámetros del componible de Scaffold para crear una pantalla con una barra de aplicación superior simple, una barra de aplicación inferior y un botón de acción flotante.
+
+También contiene algún contenido interno básico, como este texto.
+
+Has presionado el botón de acción flotante %1$d veces.</string>
+</resources>
