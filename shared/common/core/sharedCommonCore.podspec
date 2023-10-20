@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
     spec.source                   = { :http=> ''}
     spec.authors                  = ''
     spec.license                  = ''
-    spec.summary                  = 'Cocoapod sharedCommonCore module for KMP Template'
+    spec.summary                  = 'CocoaPods sharedCommonCore module for KMP Template 0.0.1'
     spec.vendored_frameworks      = 'build/cocoapods/framework/sharedCommonCore.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target = '14.1'

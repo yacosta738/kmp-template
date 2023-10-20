@@ -1,6 +1,6 @@
-package io.kmptemplate.ui.base.sentry
+package io.kmptemplate.ui.main.sentry
 
-import io.kmptemplate.shared.ui.base.ApplicationBuildConfig
+import io.kmptemplate.shared.ui.main.ApplicationBuildConfig
 
 actual val DEBUG: Boolean
     get() = ApplicationBuildConfig.DEBUG

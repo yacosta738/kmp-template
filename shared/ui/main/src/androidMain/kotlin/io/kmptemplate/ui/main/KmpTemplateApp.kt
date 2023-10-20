@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import io.kmptemplate.domain.Greeting
 import io.kmptemplate.shared.ui.main.R
 import io.kmptemplate.ui.base.design.ApplicationTheme
-import io.kmptemplate.ui.base.sentry.initApp
+import io.kmptemplate.ui.main.sentry.initApp
 import io.kmptemplate.ui.main.di.applicationModule
 import io.kmptemplate.ui.main.di.platformModule
 import org.koin.compose.KoinApplication
