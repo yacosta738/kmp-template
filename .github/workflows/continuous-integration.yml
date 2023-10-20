@@ -52,7 +52,7 @@ jobs:
                 id: diawi_android
                 with:
                     token: ${{ secrets.DIAWI_TOKEN }}
-                    file: apps/androidApp/build/outputs/apk/debug/androidApp-debug.apk
+                    file: ./apps/androidApp/build/outputs/apk/debug/androidApp-debug.apk
             -   name: Post comment with Diawi link
                 uses: peter-evans/create-or-update-comment@v3.0.2
                 with:
