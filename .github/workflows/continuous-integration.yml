@@ -15,6 +15,16 @@ permissions:
     pull-requests: write
 
 jobs:
+    validation:
+        name: Validation
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+                with:
+                    fetch-depth: 0
+            -   name: Validate Gradle wrapper
+                uses: gradle/wrapper-validation-action@v1.1.0
     compile:
         name: 💻 Compile
         runs-on: ubuntu-latest
