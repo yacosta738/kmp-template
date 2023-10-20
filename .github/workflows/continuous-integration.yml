@@ -55,11 +55,12 @@ jobs:
                     file: ./apps/androidApp/build/outputs/apk/debug/androidApp-debug.apk
             -   name: 🟢Post comment with Diawi link TEST
                 run: |
-                    echo 🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢
+                    echo 🟢🟢🟢🟢🟢🟢🟢🟢
                     echo github.event.number = ${{ github.event.number  }}
                     echo github.event.pull_request.number = ${{ github.event.pull_request.number }}
                     echo github.event.issue.number = ${{ github.event.issue.number }}
                     echo one event number = ${{ github.event.pull_request.number || github.event.issue.number || github.event.number }}
+                    echo 🟢🟢🟢🟢🟢🟢🟢🟢
             -   name: 🟢Post comment with Diawi link
                 uses: peter-evans/create-or-update-comment@v3.0.2
                 with:
