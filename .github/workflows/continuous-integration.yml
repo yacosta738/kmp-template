@@ -59,10 +59,11 @@ jobs:
                     echo github.event.number = ${{ github.event.number  }}
                     echo github.event.pull_request.number = ${{ github.event.pull_request.number }}
                     echo github.event.issue.number = ${{ github.event.issue.number }}
+                    echo one event number = ${{ github.event.pull_request.number || github.event.issue.number || github.event.number }}
             -   name: 🟢Post comment with Diawi link
                 uses: peter-evans/create-or-update-comment@v3.0.2
                 with:
-                    issue-number: ${{ github.event.pull_request.number || github.event.issue.number }}
+                    issue-number: ${{ github.event.pull_request.number || github.event.issue.number || github.event.number }}
                     body: |
                         | Android                                       | iOS      |
                         |:---------------------------------------------:|:--------:|
