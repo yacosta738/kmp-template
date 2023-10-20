@@ -27,11 +27,12 @@ internal fun KotlinMultiplatformExtension.configureCocoapods(project: Project) {
         .filter { it.isNotEmpty() }
         .reduceRight { acc, s -> "$acc${s.capitalize()}" }
 
+    println("Configuring cocoapods for $podName")
     configureExtension<CocoapodsExtension> {
         name = podName
         homepage = "https://github.com/yacosta738/kmp-template"
         podfile = project.file("${project.rootDir}/apps/iosApp/Podfile")
-        summary = "Cocoapod $podName module for KMP Template"
+        summary = "CocoaPods $podName module for ${AppConfiguration.appName} ${AppConfiguration.versionName}"
         version = AppConfiguration.versionName
         ios.deploymentTarget = "14.1"
 
@@ -39,7 +40,6 @@ internal fun KotlinMultiplatformExtension.configureCocoapods(project: Project) {
 
         framework {
             baseName = podName
-            isStatic = false
         }
     }
 }

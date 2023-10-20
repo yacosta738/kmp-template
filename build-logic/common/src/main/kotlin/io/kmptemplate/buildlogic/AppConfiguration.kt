@@ -6,6 +6,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget as KtJvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion as KtVersion
 
 object AppConfiguration {
+    const val appName = "KMP Template"
     const val compileSdk = 34
     const val buildTools = "34.0.0"
     const val packageName = "io.kmptemplate"

@@ -62,9 +62,7 @@ fun calculateProjectName(dir: File): String {
     // must replace / with : for gradle project names (e.g. shared/common/tests)
     val projectName = dir.relativeTo(rootDir).path.replace("/", ":")
     println("\uD83D\uDFE2 Project name: $projectName")
-    val pName = if (projectName.startsWith(":")) projectName.substring(1) else projectName
-    println("\uD83D\uDE80 Project name: $pName")
-    return pName
+    return if (projectName.startsWith(":")) projectName.substring(1) else projectName
 }
 
 fun includeProjectsInDirectory(directoryPath: String) {

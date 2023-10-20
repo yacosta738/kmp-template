@@ -12,17 +12,12 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import co.touchlab.kermit.*
 import io.kmptemplate.domain.Greeting
-import io.kmptemplate.shared.ui.main.ApplicationBuildConfig
 import io.kmptemplate.shared.ui.main.R
 import io.kmptemplate.ui.base.design.ApplicationTheme
+import io.kmptemplate.ui.base.sentry.initApp
 import io.kmptemplate.ui.main.di.applicationModule
 import io.kmptemplate.ui.main.di.platformModule
-import io.sentry.kotlin.multiplatform.Context
-import io.sentry.kotlin.multiplatform.Sentry
-import io.sentry.kotlin.multiplatform.SentryLevel
-import io.sentry.kotlin.multiplatform.protocol.Breadcrumb
 import org.koin.compose.KoinApplication
 import org.koin.compose.LocalKoinApplication
 
@@ -110,54 +105,4 @@ private fun KmpTemplateDI(
         application = { modules(applicationModule, platformModule) },
         content = content,
     )
-}
-
-private fun initApp(context: Context) {
-    initSentry(context)
-    initNapier()
-}
-
-private const val DEBUG = ApplicationBuildConfig.DEBUG
-private const val SENTRY_DSN = ApplicationBuildConfig.SENTRY_DSN
-
-private fun initNapier() {
-    if (DEBUG) {
-        Logger.setLogWriters(platformLogWriter(DefaultFormatter))
-    } else {
-        Logger.setLogWriters(SentryLogger(Severity.Error))
-    }
-}
-
-private fun initSentry(context: Context) {
-    Sentry.init(context) { options ->
-        options.debug = DEBUG
-        options.dsn = SENTRY_DSN
-    }
-}
-
-private class SentryLogger(private val minSeverity: Severity) : LogWriter() {
-    private val Severity.sentryLevel
-        get() = when (this) {
-            Severity.Verbose -> SentryLevel.DEBUG
-            Severity.Debug -> SentryLevel.DEBUG
-            Severity.Info -> SentryLevel.INFO
-            Severity.Warn -> SentryLevel.WARNING
-            Severity.Error -> SentryLevel.ERROR
-            Severity.Assert -> SentryLevel.FATAL
-        }
-
-    override fun isLoggable(tag: String, severity: Severity) =
-        !DEBUG && severity >= minSeverity
-
-    override fun log(severity: Severity, message: String, tag: String, throwable: Throwable?) {
-        if (throwable != null && severity >= minSeverity) {
-            Sentry.addBreadcrumb(
-                Breadcrumb(
-                    level = severity.sentryLevel,
-                    message = "$tag: $message",
-                ),
-            )
-            Sentry.captureException(throwable)
-        }
-    }
 }

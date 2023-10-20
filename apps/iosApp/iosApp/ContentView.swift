@@ -1,5 +1,9 @@
 import SwiftUI
-import shared
+import sharedDomainGreeting
+//import sharedCommonCore
+//import sharedUiBase
+//import sharedUiMain
+//import shared
 
 struct ContentView: View {
 	let greet = Greeting().greet()

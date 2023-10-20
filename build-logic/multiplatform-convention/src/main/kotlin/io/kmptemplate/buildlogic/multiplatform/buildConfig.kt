@@ -1,8 +1,8 @@
 package io.kmptemplate.buildlogic.multiplatform
 
 import com.esotericsoftware.yamlbeans.YamlReader
-import java.util.concurrent.atomic.AtomicBoolean
 import org.gradle.api.Project
+import java.util.concurrent.atomic.AtomicBoolean
 
 private typealias YamlBuildConfig = Map<String, FlavorBuildConfig>
 private typealias FlavorBuildConfig = Map<String, ArrayList<LinkedHashMap<String, String>>>
@@ -19,6 +19,9 @@ internal fun Project.appBuildConfig(
     android: (List<BuildConfig>) -> Unit,
     ios: (List<BuildConfig>) -> Unit,
 ) {
+    println(" >>> appBuildConfig: $initialized")
+    println(" >>> appBuildConfig: $rootDir")
+    println(" >>> Project: $projectDir")
     if (!initialized.compareAndSet(false, true)) {
         val flavor = providers.gradleProperty("app.flavor").getOrElse("dev")
         val ymlConfig = rootDir.resolve("config/build_config.yml").readText()
