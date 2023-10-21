@@ -32,8 +32,8 @@ jobs:
         steps:
             -   name: Checkout
                 uses: actions/checkout@v4
-#                with:
-#                    fetch-depth: 0
+                with:
+                    fetch-depth: 0
             -   name: ⚙️ Common Steps for all jobs
                 uses: ./.github/actions/common-steps
             -   name: 🛠️Assemble Application
@@ -53,7 +53,7 @@ jobs:
                 with:
                     token: ${{ secrets.DIAWI_TOKEN }}
                     file: ./apps/androidApp/build/outputs/apk/debug/androidApp-debug.apk
-            -   name: 🟢 Post comment with Diawi link TEST
+            -   name: 🟢Post comment with Diawi link TEST
                 run: |
                     echo 🟢🟢🟢🟢🟢🟢🟢🟢
                     echo github.event.number = ${{ github.event.number  }}
