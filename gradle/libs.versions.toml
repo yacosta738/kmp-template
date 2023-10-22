@@ -61,7 +61,7 @@ compose-material3-windowsize = { module = "dev.chrisbanes.material3:material3-wi
 
 
 # Kermit
-kermit = { module = "co.touchlab:kermit", version = "2.0.1" }
+kermit = { module = "co.touchlab:kermit", version = "2.0.2" }
 
 # Arrow
 arrow = { module = "io.arrow-kt:arrow-core", version = "1.2.1" }
