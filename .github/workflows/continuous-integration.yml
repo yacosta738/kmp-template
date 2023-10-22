@@ -62,7 +62,7 @@ jobs:
             -   name: 🟢 Post comment with Diawi link
                 uses: peter-evans/create-or-update-comment@v3.0.2
                 with:
-                    issue-number: ${{ github.event.pull_request.number || github.event.issue.number || github.event.number || github.head_ref }}
+                    issue-number: ${{ github.event.pull_request.number }}
                     body: |
                         | Android                                       | iOS      |
                         |:---------------------------------------------:|:--------:|
@@ -72,7 +72,12 @@ jobs:
                         [1]: ${{ steps.diawi_android.outputs.url }}
                         [2]: https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${{ steps.diawi_android.outputs.url }}
 
-
+                    reactions: |
+                        +1
+                        eyes
+                        heart
+                        hooray
+                        rocket
     tests:
         name: Tests
         needs: compile
@@ -105,6 +110,10 @@ jobs:
                         ❌ Build failed. See [build scan]([1]) for details.
 
                         [1]: ${{ steps.sonar.outputs.build-scan-url }}
+                    reactions: |
+                        -1
+                        confused
+                        eyes
             -   name: 💫 Generate JaCoCo Badge
                 uses: cicirello/jacoco-badge-generator@v2
                 with:
