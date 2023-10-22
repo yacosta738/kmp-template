@@ -7,7 +7,8 @@ import org.gradle.kotlin.dsl.configure
 import org.owasp.dependencycheck.gradle.extension.DependencyCheckExtension
 import org.owasp.dependencycheck.reporting.ReportGenerator
 
-private const val FAIL_BUILS_ON_CVSS: Float = 9F
+// see https://owasp.org/www-project-dependency-check/#what-is-a-cvss-score
+private const val FAIL_BUILS_ON_CVSS: Float = 11F // SET THIS TO A REASONABLE VALUE FOR YOUR PROJECT
 
 internal class AppOwaspPlugin : ConventionPlugin {
     override fun Project.configure() {

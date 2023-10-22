@@ -102,7 +102,9 @@ jobs:
                 with:
                     issue-number: ${{ format('PR-{0}', github.event.pull_request.number) }}
                     body: |
-                        ❌ Build failed. See [build scan](${{ steps.build_scan.outputs.url }}) for details.
+                        ❌ Build failed. See [build scan]([1]) for details.
+
+                        [1]: ${{ steps.sonar.outputs.build-scan-url }}
             -   name: 💫 Generate JaCoCo Badge
                 uses: cicirello/jacoco-badge-generator@v2
                 with:
