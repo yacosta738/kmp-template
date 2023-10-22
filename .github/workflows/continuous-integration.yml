@@ -100,7 +100,7 @@ jobs:
                 uses: peter-evans/create-or-update-comment@v3.0.2
                 if: github.event_name == 'pull_request' && failure()
                 with:
-                    issue-number: ${{ github.event.pull_request.number + github.event.issue.number + github.event.number + github.head_ref }}
+                    issue-number: ${{ format('PR-{0}', github.event.pull_request.number) }}
                     body: |
                         ❌ Build failed. See [build scan](${{ steps.build_scan.outputs.url }}) for details.
             -   name: 💫 Generate JaCoCo Badge
