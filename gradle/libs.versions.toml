@@ -6,7 +6,7 @@ dokka = "1.9.0"
 detekt = "1.23.1"
 sonarqubeGradlePlugin = "4.4.0.3356"
 jacoco = "0.8.10"
-compose = "1.5.2"
+compose = "1.5.3"
 destinations = "1.9.53"
 #Testing
 mockmp = "1.15.0"
@@ -35,7 +35,7 @@ kotlin-logging = "3.0.5"
 # Gradle Plugins
 gradle-android = { module = "com.android.tools.build:gradle", version = "8.1.2" }
 gradle-complete-kotlin = { module = "com.louiscad.complete-kotlin:plugin", version = "1.1.0" }
-gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version = "0.7.3" }
+gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version = "0.7.4" }
 gradle-sentry = { module = "io.sentry:sentry-android-gradle-plugin", version = "3.13.0" }
 gradle-buildconfig = { module = "com.github.gmazzo.buildconfig:plugin", version = "4.1.2" }
 gradle-kotest = { module = "io.kotest:kotest-framework-multiplatform-plugin-gradle", version.ref = "kotest" }
@@ -52,7 +52,7 @@ gradle-sonarqube = { module = "org.sonarsource.scanner.gradle:sonarqube-gradle-p
 
 # Kotlin
 kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
-kotlin-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.5" }
+kotlin-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.6" }
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version = "1.6.0" }
 
 # Compose
