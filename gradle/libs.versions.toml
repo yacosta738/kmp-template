@@ -7,7 +7,7 @@ detekt = "1.23.1"
 sonarqubeGradlePlugin = "4.4.0.3356"
 jacoco = "0.8.10"
 compose = "1.5.3"
-destinations = "1.9.53"
+destinations = "1.9.54"
 #Testing
 mockmp = "1.15.0"
 mockk = "1.13.8"
