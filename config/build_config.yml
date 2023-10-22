@@ -1,0 +1,44 @@
+android:
+    dev:
+        - type: boolean
+          name: DEBUG
+          value: 'true'
+        - type: String
+          name: SENTRY_DSN
+          value: '""'
+    beta:
+        - type: boolean
+          name: DEBUG
+          value: 'false'
+        - type: String
+          name: SENTRY_DSN
+          value: '"https://59d460f62486884517a27780253af269@o4506021043568640.ingest.sentry.io/4506021126406144"'
+    release:
+        - type: boolean
+          name: DEBUG
+          value: 'false'
+        - type: String
+          name: SENTRY_DSN
+          value: '"https://e1172fac1ab9f1461a10997ec875b64a@o4506021043568640.ingest.sentry.io/4506021062377472"'
+ios:
+    dev:
+        - type: boolean
+          name: DEBUG
+          value: 'true'
+        - type: String
+          name: SENTRY_DSN
+          value: '""'
+    beta:
+        - type: boolean
+          name: DEBUG
+          value: 'false'
+        - type: String
+          name: SENTRY_DSN
+          value: '"https://69c858b710296ce1cfe99a1caa7ced37@o4506021043568640.ingest.sentry.io/4506021161140224"'
+    release:
+        - type: boolean
+          name: DEBUG
+          value: 'false'
+        - type: String
+          name: SENTRY_DSN
+          value: '"https://5db57bf32ce48dc3e72f41879be0ed78@o4506021043568640.ingest.sentry.io/4506021244305408"'

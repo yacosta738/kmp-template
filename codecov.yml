@@ -1,0 +1,31 @@
+coverage:
+  status:
+    patch:
+      default:
+        target: 50% # TODO revert to 80% when finishing Kover integration
+        threshold: 1%
+    project:
+      default:
+        target: 50% # TODO revert to 80% when finishing Kover integration
+        threshold: 1%
+
+ignore:
+  - '**/build/**'
+
+  # App
+  - '**/KmpTemplateApp.kt'
+  - '**/initializers/**'
+
+  # Common
+  - '**/common/**'
+
+  # Common Android
+  - '**/*Activity'
+  - '**/*Fragment'
+  - '**/di/**'
+
+  # Ui
+  - '**/ui/**/components/**'
+  - '**/ui/**/design/**'
+  - '**/ui/**/navigation/**'
+  - '**/ui/**/view/**'

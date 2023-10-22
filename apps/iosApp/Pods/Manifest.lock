@@ -1,0 +1,48 @@
+PODS:
+  - Sentry (8.9.6):
+    - Sentry/Core (= 8.9.6)
+    - SentryPrivate (= 8.9.6)
+  - Sentry/Core (8.9.6):
+    - SentryPrivate (= 8.9.6)
+  - SentryPrivate (8.9.6)
+  - sharedCommonCore (0.0.1):
+    - Sentry (~> 8.9.5)
+  - sharedDomainGreeting (0.0.1):
+    - Sentry (~> 8.9.5)
+  - sharedUiBase (0.0.1):
+    - Sentry (~> 8.9.5)
+  - sharedUiMain (0.0.1):
+    - Sentry (~> 8.9.5)
+
+DEPENDENCIES:
+  - sharedCommonCore (from `../../shared/common/core`)
+  - sharedDomainGreeting (from `../../shared/domain/greeting`)
+  - sharedUiBase (from `../../shared/ui/base`)
+  - sharedUiMain (from `../../shared/ui/main`)
+
+SPEC REPOS:
+  trunk:
+    - Sentry
+    - SentryPrivate
+
+EXTERNAL SOURCES:
+  sharedCommonCore:
+    :path: "../../shared/common/core"
+  sharedDomainGreeting:
+    :path: "../../shared/domain/greeting"
+  sharedUiBase:
+    :path: "../../shared/ui/base"
+  sharedUiMain:
+    :path: "../../shared/ui/main"
+
+SPEC CHECKSUMS:
+  Sentry: 806829626b2e264d40d2d30735e9ee38209ed77e
+  SentryPrivate: b283d59b0baadcbb513205f919f41d261028351b
+  sharedCommonCore: 582727204a7e4ff39c98e695edad83468c5774d3
+  sharedDomainGreeting: 96265138394da156563d81f0e11f568e8c2a3500
+  sharedUiBase: 2870749e3634f57066d310b84de5de2dd9218f7e
+  sharedUiMain: 7916103310a136718db1b491b8f91494813e0b8d
+
+PODFILE CHECKSUM: e5b9a998dbdcc93b961d2f0509c52aeb891aac96
+
+COCOAPODS: 1.13.0

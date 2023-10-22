@@ -1,6 +1,12 @@
 name: CI Build
 
-on: [ push ]
+on:
+    pull_request:
+    push:
+        branches:
+            - develop
+        tags:
+            - v*
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
@@ -15,22 +21,65 @@ permissions:
     pull-requests: write
 
 jobs:
-    compile:
-        name: 💻 Compile
+    validation:
+        name: 👀 Validation
         runs-on: ubuntu-latest
-
         steps:
-            -   name: 🔄 Checkout
+            -   name: Checkout
                 uses: actions/checkout@v4
-
+                with:
+                    fetch-depth: 0
+            -   name: Validate Gradle wrapper
+                uses: gradle/wrapper-validation-action@v1.1.0
+    compile:
+        name: 🛠️ Assembling
+        runs-on: ubuntu-latest
+        if: github.event_name == 'pull_request'
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
             -   name: ⚙️ Common Steps for all jobs
                 uses: ./.github/actions/common-steps
+            -   name: 🛠️Assemble Application
+                run: ./gradlew assembleDebug --no-daemon --scan --stacktrace
+            -   name: 🟢⬆️ Upload compose reports artifact
+                uses: actions/upload-artifact@v3.1.3
+                if: always()
+                with:
+                    name: compose-reports
+                    path: |
+                        **/build/compose-metrics
+                        **/build/compose-reports
+                    retention-days: 7
+            -   name: 🟢⬆️Upload Android APK
+                uses: rnkdsh/action-upload-diawi@v1.5.2
+                id: diawi_android
+                with:
+                    token: ${{ secrets.DIAWI_TOKEN }}
+                    file: ./apps/androidApp/build/outputs/apk/debug/androidApp-debug.apk
+            -   name: 🟢 Post comment with Diawi link
+                uses: peter-evans/create-or-update-comment@v3.0.2
+                with:
+                    issue-number: ${{ github.event.pull_request.number }}
+                    body: |
+                        | Android                                       | iOS      |
+                        |:---------------------------------------------:|:--------:|
+                        | [Download APK (v${{ github.run_number }})][1] | Not yet. |
+                        | ![2]                                          | Not yet. |
 
-            -   name: 💻 Compile
-                run: ./gradlew clean classes testClasses testIntegrationClasses
+                        [1]: ${{ steps.diawi_android.outputs.url }}
+                        [2]: https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${{ steps.diawi_android.outputs.url }}
 
+                    reactions: |
+                        +1
+                        eyes
+                        heart
+                        hooray
+                        rocket
     tests:
-        name: Tests
+        name: 🧪 Tests
         needs: compile
         runs-on: ubuntu-latest
 
@@ -47,49 +96,61 @@ jobs:
                     token: ${{ env.BOT_TOKEN }}
             -   name: ⚙️ Common Steps for all jobs
                 uses: ./.github/actions/common-steps
-            -   name: 🧪 Run tests
-                run: ./gradlew clean check sonar aggregateReports --scan
+            -   name: 🧪 Run unit tests
+                run: ./gradlew unitTests koverXmlReport koverVerify --no-daemon --scan --stacktrace
                 env:
                     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            -   name: 🟡 Add build scan URL as PR comment
-                uses: actions/github-script@v6
+            -   name: 🟢 Upload tests reports artifact (success ✅)
+                uses: actions/upload-artifact@v3.1.3
+                if: success()
+                with:
+                    name: tests-reports
+                    path: build/reports/allTests
+                    retention-days: 7
+            -   name: 🔴 Upload tests reports artifact (failure ❌)
+                uses: actions/upload-artifact@v3.1.3
+                if: failure()
+                with:
+                    name: tests-reports
+                    path: |
+                        **/build/reports/tests/test
+                        **/build/reports/tests/testDebugUnitTest
+                    retention-days: 7
+            -   name: 🟢 Upload coverage reports artifact
+                uses: actions/upload-artifact@v3.1.3
+                with:
+                    name: coverage-reports
+                    path: '**/build/reports/kover/report.xml'
+                    retention-days: 1
+            -   name: 🟢 ➡️ 🧪 Upload report to Codecov
+                uses: codecov/codecov-action@v3.1.4
+                with:
+                    token: ${{ secrets.CODECOV_TOKEN }}
+                    files: build/reports/kover/report.xml
+                    flags: unittests
+                    verbose: true
+            -   name: 🟡 Post comment with build scan URL as PR comment
+                uses: peter-evans/create-or-update-comment@v3.0.2
                 if: github.event_name == 'pull_request' && failure()
                 with:
-                    github-token: ${{env.BOT_TOKEN}}
-                    script: |
-                        github.rest.issues.createComment({
-                          issue_number: context.issue.number,
-                          owner: context.repo.owner,
-                          repo: context.repo.repo,
-                          body: '❌ ${{ github.workflow }} failed: ${{ steps.gradle.outputs.build-scan-url }}'
-                        })
-            -   name: 💫 Generate JaCoCo Badge
-                uses: cicirello/jacoco-badge-generator@v2
-                with:
-                    generate-branches-badge: true
-                    jacoco-csv-file: build/reports/jacoco/aggregateJacocoTestReport/aggregateJacocoTestReport.csv
+                    issue-number: ${{ format('PR-{0}', github.event.pull_request.number) }}
+                    body: |
+                        ❌ Build failed. See [build scan]([1]) for details.
 
-            -   name: 📄 Log coverage percentage
-                run: |
-                    echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
-                    echo "branch coverage = ${{ steps.jacoco.outputs.branches }}"
-
-            -   name: ❇️Commit and push the badge (if it changed)
-                if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' && github.event.head_commit.author.username != 'github-actions'
-                uses: EndBug/add-and-commit@v9
-                with:
-                    default_author: github_actions
-                    message: 'commit badge 🍀 ${{ steps.jacoco.outputs.coverage }} %'
-                    github_token: ${{ env.BOT_TOKEN }}
-            -   name: 📑 Upload documentation results
+                        [1]: ${{ steps.sonar.outputs.build-scan-url }}
+                    reactions: |
+                        -1
+                        confused
+                        eyes
+            -   name: 📑📚 Upload documentation results
                 uses: actions/upload-artifact@v3
                 with:
                     name: documentation
                     path: build/documentation
 
-    security:
-        name: 🔒Security Checks
+    static-analysis-security:
+        name: 🔮 Static analysis and 🔒Security Checks
         runs-on: ubuntu-latest
 
         steps:
@@ -102,30 +163,43 @@ jobs:
                 uses: ./.github/actions/common-steps
 
             -   name: 🛡️Check OWASP
-                run: ./gradlew clean dependencyCheckAnalyze
+                run: ./gradlew dependencyCheckAnalyze --no-daemon --stacktrace
             -   name: ️🛡️⬆️ Upload owasp-report results
                 uses: actions/upload-artifact@v3
                 with:
                     name: owasp-reports
                     path: build/reports/owasp
-            -   name: 🏗️ 📦 Build package
-                run: ./gradlew clean assemble dockerCreateDockerfile -x test -x integrationTest
-            -   name: 🏗️ 🐳 Build Container Image
-                uses: docker/build-push-action@v5
+            -   name: Run detekt
+                run: ./gradlew detektAll lintDebug --no-daemon --stacktrace
+            -   name: Upload static reports artifact
+                uses: actions/upload-artifact@v3.1.3
                 with:
-                    context: ./apps/app/build/docker/
-                    file: ./apps/app/build/docker/Dockerfile
-                    push: false
-                    tags: n4t5u/yacosta738/kmp-template:latest
-            -   name: 🔍 🪪 Scan container using trivy
-                id: scan
-                uses: azure/container-scan@v0
+                    name: static-report
+                    path: |
+                        build/reports/detekt/detekt.xml
+                        **/build/reports/lint-results-debug.xml
+                    retention-days: 1
+            -   name: Analyze detekt report
+                uses: github/codeql-action/upload-sarif@v2.21.9
                 with:
-                    image-name: n4t5u/yacosta738/kmp-template:latest
+                    sarif_file: build/reports/detekt/detekt.sarif
+                    checkout_path: ${{ github.workspace }}
+#            -   name: 🏗️ 🐳 Build Container Image
+#                uses: docker/build-push-action@v5
+#                with:
+#                    context: ./apps/app/build/docker/
+#                    file: ./apps/app/build/docker/Dockerfile
+#                    push: false
+#                    tags: n4t5u/yacosta738/kmp-template:latest
+#            -   name: 🔍 🪪 Scan container using trivy
+#                id: scan
+#                uses: azure/container-scan@v0
+#                with:
+#                    image-name: n4t5u/yacosta738/kmp-template:latest
 
     release:
         name: 🚀 Release
-        needs: [ tests, security ]
+        needs: [ tests, static-analysis-security ]
         if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
 

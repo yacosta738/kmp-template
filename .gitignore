@@ -11,6 +11,7 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+!/.idea/runConfigurations/
 
 # Generated files
 .idea/**/contentModel.xml
@@ -228,3 +229,22 @@ gradle-app.setting
 /infra/neo4j/
 /node_modules/
 /dependency-graph-reports/
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+
+# iosApp dependencies
+iosApp.xcconfig
+apps/iosApp/Podfile.lock
+apps/iosApp/Pods/*
+apps/iosApp/iosApp.xcworkspace/*
+apps/iosApp/iosApp.xcodeproj/*
+!apps/iosApp/iosApp.xcodeproj/project.pbxproj
+
+local.properties
+sentry.properties
+
+kmp-template.jks
+kmp-template.keystore

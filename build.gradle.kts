@@ -1,17 +1,13 @@
 plugins {
     idea
-    base
-    id("io.kmptemplate.kotlin-common-conventions")
-
-    // due to late-binding not working, aggregation should define tasks doc-consumer
-    id("io.kmptemplate.aggregation-conventions")
-
-    id("io.kmptemplate.verification.jacoco-consumer-conventions")
-    id("io.kmptemplate.verification.test-consumer-conventions")
-    id("io.kmptemplate.documentation.documentation-consumer-conventions")
-
-    id("io.kmptemplate.verification.sonarqube-conventions")
-    id("io.kmptemplate.gradle-git-properties-conventions")
+    id("app.common")
+    id("app.dependency-versions")
+    id("app.detekt")
+    id("app.owasp.dependency.check")
+    id("app.kover")
+    id("app.sonar")
+    id("app.documentation.consumer")
+    alias(libs.plugins.compose) apply false
 }
 
 idea {
@@ -27,13 +23,13 @@ repositories {
     mavenCentral()
 }
 
-// this task generates all tasks for sub-projects itself, therefor it just needs
-// to be applied on the root project, conventions are not working :-(
+// // this task generates all tasks for sub-projects itself, therefor it just needs
+// // to be applied on the root project, conventions are not working :-(
 tasks.dokkaHtmlMultiModule.configure {
     outputDirectory.set(layout.buildDirectory.dir("dokka"))
 }
 
 dependencies {
-    implementation(project(":app"))
+    // implementation(project(":app"))
     asciidoc(project(":documentation"))
 }

@@ -1,5 +1,6 @@
 # Kotlin Multiplatform Template
 [![CI Build](https://github.com/yacosta738/kmp-template/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/yacosta738/kmp-template/actions/workflows/continuous-integration.yml)
+[![codecov](https://codecov.io/gh/yacosta738/kmp-template/graph/badge.svg?token=A356G09B2W)](https://codecov.io/gh/yacosta738/kmp-template)
 ![coverage](.github/badges/jacoco.svg)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)

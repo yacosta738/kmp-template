@@ -1,0 +1,11 @@
+target 'iosApp' do
+  use_frameworks!
+  platform :ios, '14.1'
+
+  pod 'sharedCommonCore', :path => '../../shared/common/core'
+
+  pod 'sharedDomainGreeting', :path => '../../shared/domain/greeting'
+
+  pod 'sharedUiBase', :path => '../../shared/ui/base'
+  pod 'sharedUiMain', :path => '../../shared/ui/main'
+end

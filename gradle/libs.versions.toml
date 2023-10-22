@@ -1,19 +1,29 @@
 [versions]
 
 kotlin = "1.9.10"
+coroutines = "1.7.3"
 dokka = "1.9.0"
 detekt = "1.23.1"
 sonarqubeGradlePlugin = "4.4.0.3356"
 jacoco = "0.8.10"
+compose = "1.5.2"
+destinations = "1.9.53"
 #Testing
+mockmp = "1.15.0"
 mockk = "1.13.8"
 junit = "5.10.0"
+ktor = "2.3.4"
+koin = "3.5.0"
+koin-compose = "3.4.5"
+koin-test = "3.5.0"
 kotest = "5.7.2"
 assertk-jvm = "0.27.0"
 owasp = "8.4.0"
 asciidoctor = "4.0.0-alpha.1"
 gradle-git-properties = "2.4.1"
 docker-plugin = "9.3.3"
+orbit = "6.1.0"
+sentry = "6.30.0"
 # Utilities
 apache-commons = "1.10.0"
 kotlin-logging = "3.0.5"
@@ -22,40 +32,207 @@ kotlin-logging = "3.0.5"
 [libraries]
 # project dependencies
 
-# Dependencies (plugins)
-kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+# Gradle Plugins
+gradle-android = { module = "com.android.tools.build:gradle", version = "8.1.2" }
+gradle-complete-kotlin = { module = "com.louiscad.complete-kotlin:plugin", version = "1.1.0" }
+gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version = "0.7.3" }
+gradle-sentry = { module = "io.sentry:sentry-android-gradle-plugin", version = "3.13.0" }
+gradle-buildconfig = { module = "com.github.gmazzo.buildconfig:plugin", version = "4.1.2" }
+gradle-kotest = { module = "io.kotest:kotest-framework-multiplatform-plugin-gradle", version.ref = "kotest" }
+gradle-ksp = { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin", version = "1.9.10-1.0.13" }
+gradle-compose = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose" }
+gradle-mockmp = { module = "org.kodein.mock:mockmp-gradle-plugin", version.ref = "mockmp" }
+gradle-updates = { module = "com.github.ben-manes:gradle-versions-plugin", version = "0.48.0" }
+gradle-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin" }
 kotlin-noarg = { module = "org.jetbrains.kotlin:kotlin-noarg", version.ref = "kotlin" }
-dokka-gradle = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+gradle-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
 gradle-git-properties = { module = "com.gorylenko.gradle-git-properties:gradle-git-properties", version.ref = "gradle-git-properties" }
-detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+gradle-sonarqube = { module = "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin", version.ref = "sonarqubeGradlePlugin" }
+
+# Kotlin
+kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.5" }
+kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version = "1.6.0" }
+
+# Compose
+compose-compiler = { module = "org.jetbrains.compose.compiler:compiler", version = "1.5.2" }
+compose-material3-windowsize = { module = "dev.chrisbanes.material3:material3-window-size-class-multiplatform", version = "0.3.1" }
+
+
+# Kermit
+kermit = { module = "co.touchlab:kermit", version = "2.0.1" }
+
+# Arrow
+arrow = { module = "io.arrow-kt:arrow-core", version = "1.2.1" }
+
+# Koin
+koin = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-compose = { module = "io.insert-koin:koin-compose", version = "1.1.0" }
+koin-compose-android = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin-test" }
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin-test" }
+
+# Coroutines
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
+# Detekt
+gradle-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+detekt-compose = { module = "io.nlopez.compose.rules:detekt", version = "0.3.0" }
+detekt-compose2 = { module = "ru.kode:detekt-rules-compose", version = "1.3.0" }
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+
+# Sentry
+sentry = { module = "io.sentry:sentry-android-core", version.ref = "sentry" }
+sentry-apollo = { module = "io.sentry:sentry-apollo-3", version.ref = "sentry" }
+sentry-compose = { module = "io.sentry:sentry-compose-android", version.ref = "sentry" }
+sentry-multiplatform = { module = "io.sentry:sentry-kotlin-multiplatform", version = "0.2.1" }
+
+# AndroidX
+androidx-activity = { module = "androidx.activity:activity-compose", version = "1.8.0" }
+
+# Destiantions
+destinations = { module = "io.github.raamcosta.compose-destinations:animations-core", version.ref = "destinations" }
+destinations-compiler = { module = "io.github.raamcosta.compose-destinations:ksp", version.ref = "destinations" }
+
+# Kamel
+kamel = { module = "media.kamel:kamel-image", version = "0.7.3" }
+
+# Ktor
+ktor-android = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-ios = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+
+# YAML
+yamlbeans = { module = "com.esotericsoftware.yamlbeans:yamlbeans", version = "1.15" }
+
 # Utils
-owasp-depcheck = { module = "org.owasp:dependency-check-gradle", version.ref = "owasp" }
-asciidoctor-gradle = { module = "org.asciidoctor:asciidoctor-gradle-jvm", version.ref = "asciidoctor" }
+gradle-owasp-depcheck = { module = "org.owasp:dependency-check-gradle", version.ref = "owasp" }
+gradle-asciidoctor = { module = "org.asciidoctor:asciidoctor-gradle-jvm", version.ref = "asciidoctor" }
 gradle-docker-plugin = { module = "com.bmuschko:gradle-docker-plugin", version.ref = "docker-plugin" }
 
 # Utilities
 commons-text = { module = "org.apache.commons:commons-text", version.ref = "apache-commons" }
 kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
 
-# test dependencies
-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
-junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
-sonarqube-gradle-plugin = { module = "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin", version.ref = "sonarqubeGradlePlugin" }
-jacoco-core = { module = "org.jacoco:org.jacoco.core", version.ref = "jacoco" }
-kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
-kotest-assertions-json = { module = "io.kotest:kotest-assertions-json", version.ref = "kotest" }
-kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
-assertk-jvm = { module = "com.willowtreeapps.assertk:assertk-jvm", version.ref = "assertk-jvm" }
+# Orbit
+orbit = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orbit" }
+orbit-test = { module = "org.orbit-mvi:orbit-test", version.ref = "orbit" }
 
+# Tests
+## JUnit
+junit5 = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junit5-vintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
+
+## Kotest
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
+kotest-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+
+## MockK
+mockk = { module = "io.mockk:mockk", version = "1.13.8" }
+
+## MocKMP
+mockmp = { module = "org.kodein.mock:mockmp-runtime", version.ref = "mockmp" }
+
+## Turbine
+turbine = { module = "app.cash.turbine:turbine", version = "1.0.0" }
 
 [bundles]
+# Deps for Multiplatform Core (Common, JVM & iOS)
+core-common = [
+    "arrow",
+    "coroutines",
+    "koin",
+    "kotlin",
+    "kotlin-immutable",
+]
+core-jvm = []
+core-ios = []
 
-junit = ["junit-jupiter-api", "junit-jupiter-engine"]
-kotest = ["kotest-assertions-core-jvm", "kotest-assertions-json", "kotest-runner-junit5"]
+core-common-ksp = []
+core-jvm-ksp = []
+core-ios-ksp = []
+
+core-common-test = [
+    "coroutines-test",
+    "koin-test",
+    "kotest-assertions-core",
+    "kotest-engine",
+    "kotest-property",
+    "turbine",
+]
+core-jvm-test = [
+    "junit5",
+    "kotest-junit5",
+    "mockk",
+]
+core-ios-test = []
+
+# Deps for Multiplatform Mobile (Common, Android & iOS)
+mobile-common = [
+    "arrow",
+    "coroutines",
+    "koin",
+    "kotlin",
+    "kotlin-immutable",
+    "kermit"
+]
+mobile-android = [
+    "koin-android",
+    "ktor-android",
+]
+mobile-ios = [
+    "ktor-ios",
+]
+
+mobile-common-ksp = []
+mobile-android-ksp = []
+mobile-ios-ksp = []
+
+mobile-common-test = [
+    "coroutines-test",
+    "koin-test",
+    "kotest-assertions-core",
+    "kotest-engine",
+    "kotest-property",
+    "turbine",
+]
+mobile-android-test = [
+    "junit5",
+    "junit5-vintage",
+    "kotest-junit5",
+    "mockk",
+]
+mobile-ios-test = []
+
+# Deps for UI
+ui-common = [
+    "kamel",
+    "koin-compose"
+]
+
+ui-android = []
+ui-ios = []
+ui-common-test = []
+ui-android-test = [
+    "koin-junit4",
+    "orbit-test",
+]
+ui-ios-test = []
+ui-common-ksp = []
+ui-android-ksp = [
+    "destinations-compiler",
+]
+ui-ios-ksp = []
+app = [
+    "androidx-activity",
+    "sentry",
+]
+
 
 [plugins]
-
+compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 detekt-gradle = { id = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
