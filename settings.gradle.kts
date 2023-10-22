@@ -31,13 +31,15 @@ buildCache {
         directory = rootDir.resolve(".gradle/build-cache")
     }
 }
-fun isGradleKtsProjectDirectory(directory: File) = (
+fun isGradleKtsProjectDirectory(directory: File) =
     directory.isDirectory &&
-        (directory.resolve("tests.gradle.kts").exists()
-            || directory.resolve("${directory.name}.gradle.kts").exists())
-        && directory.name !in excludedProjects
-    )
-fun includeGradleProjectsRecursively(directoryPath: String){
+        (
+            directory.resolve("tests.gradle.kts").exists() ||
+                directory.resolve("${directory.name}.gradle.kts").exists()
+            ) &&
+        directory.name !in excludedProjects
+
+fun includeGradleProjectsRecursively(directoryPath: String) {
     val baseDirectory = rootDir.resolve(directoryPath)
     baseDirectory.walkTopDown()
         .maxDepth(1)
@@ -81,7 +83,9 @@ projects.forEach { includeGradleProjectsRecursively(it) }
 
 includeProject(file("documentation"))
 
-if (!System.getenv("CI").isNullOrEmpty() && !System.getenv("BUILD_SCAN_TOS_ACCEPTED").isNullOrEmpty()) {
+if (!System.getenv("CI").isNullOrEmpty() && !System.getenv("BUILD_SCAN_TOS_ACCEPTED")
+        .isNullOrEmpty()
+) {
     gradleEnterprise {
         buildScan {
             termsOfServiceUrl = "https://gradle.com/terms-of-service"

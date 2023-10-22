@@ -4,11 +4,13 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 
 @Composable
 fun ApplicationTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
+    modifier: Modifier = Modifier,
+    darkTheme: Boolean = isSystemInDarkTheme()
 ) {
     val colors = if (darkTheme) ApplicationDarkTheme else ApplicationLightTheme
 
@@ -16,6 +18,11 @@ fun ApplicationTheme(
         colorScheme = colors,
         typography = AppTypography,
         shapes = ApplicationShapes,
-        content = {  Surface(content = content) }
+        content = {
+            Surface(
+                modifier = modifier,
+                content = content,
+            )
+        },
     )
 }

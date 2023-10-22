@@ -2,7 +2,7 @@ plugins {
     id("app.android.application")
 }
 
-dependencies{
+dependencies {
     implementation(projects.shared.common.core)
 
     implementation(projects.shared.ui.base)

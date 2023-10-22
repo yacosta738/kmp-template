@@ -2,8 +2,8 @@ package io.kmptemplate.ui.base.design
 
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -26,7 +26,7 @@ internal val AppTypography: Typography
                 fontSize = 16.sp,
                 lineHeight = 24.sp,
                 letterSpacing = 0.15.sp,
-                baselineShift = BaselineShift.Subscript
+                baselineShift = BaselineShift.Subscript,
             ),
             bodyMedium = TextStyle(
                 fontWeight = FontWeight.Normal,
@@ -35,7 +35,7 @@ internal val AppTypography: Typography
                 fontSize = 16.sp,
                 lineHeight = 24.sp,
                 letterSpacing = 0.15.sp,
-                baselineShift = BaselineShift.Subscript
+                baselineShift = BaselineShift.Subscript,
             ),
         )
     }

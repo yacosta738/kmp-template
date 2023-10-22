@@ -2,7 +2,12 @@ package io.kmptemplate.buildlogic.multiplatform
 
 import com.android.build.gradle.LibraryExtension
 import com.github.gmazzo.gradle.plugins.BuildConfigExtension
-import io.kmptemplate.buildlogic.*
+import io.kmptemplate.buildlogic.ConventionPlugin
+import io.kmptemplate.buildlogic.catalogBundle
+import io.kmptemplate.buildlogic.commonExtensions
+import io.kmptemplate.buildlogic.commonTasks
+import io.kmptemplate.buildlogic.configureAndroid
+import io.kmptemplate.buildlogic.fullPackageName
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi

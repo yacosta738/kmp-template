@@ -1,6 +1,5 @@
 package io.kmptemplate.buildlogic
 
-
 import org.gradle.api.JavaVersion
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget as KtJvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion as KtVersion

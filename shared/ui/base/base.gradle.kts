@@ -2,8 +2,8 @@ plugins {
     id("app.multiplatform.compose")
 }
 
-appMultiplatform{
-    commonMainDependencies{
+appMultiplatform {
+    commonMainDependencies {
         implementation(projects.shared.common.core)
     }
     commonTestDependencies {

@@ -1,6 +1,5 @@
 package io.kmptemplate.buildlogic.documentation
 
-import io.gitlab.arturbosch.detekt.Detekt
 import io.kmptemplate.buildlogic.ConventionPlugin
 import org.asciidoctor.gradle.jvm.AsciidoctorTask
 import org.gradle.api.Project
@@ -34,7 +33,7 @@ internal class AppDocumentationConsumerPlugin : ConventionPlugin {
 //        val detektReportTask = tasks.named<Detekt>("aggregateDetekt")
 //        tasks.named<Aggregate>("dependencyCheckAggregate")
 
-        registerAggregateReports(dokkaHtmlMultiModuleTask, testReportTask, /*jacocoReportTask, detektReportTask*/)
+        registerAggregateReports(dokkaHtmlMultiModuleTask, testReportTask)
 
         registerAggregateDocumentation(asciidoc)
     }

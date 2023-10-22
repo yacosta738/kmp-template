@@ -1,10 +1,10 @@
 package io.kmptemplate.buildlogic.analysis
 
-import io.kmptemplate.buildlogic.ConventionPlugin
+import io.gitlab.arturbosch.detekt.Detekt
 import io.kmptemplate.buildlogic.AppConfiguration
+import io.kmptemplate.buildlogic.ConventionPlugin
 import io.kmptemplate.buildlogic.catalogLib
 import io.kmptemplate.buildlogic.detekt
-import io.gitlab.arturbosch.detekt.Detekt
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.dependencies

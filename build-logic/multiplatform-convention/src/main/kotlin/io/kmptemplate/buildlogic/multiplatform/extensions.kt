@@ -1,6 +1,7 @@
 package io.kmptemplate.buildlogic.multiplatform
 
 import io.kmptemplate.buildlogic.AppConfiguration
+import java.util.*
 import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
@@ -8,7 +9,6 @@ import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.plugin.cocoapods.CocoapodsExtension
-import java.util.*
 
 internal fun KotlinMultiplatformExtension.configureSourceSets(
     block: NamedDomainObjectContainer<KotlinSourceSet>.() -> Unit

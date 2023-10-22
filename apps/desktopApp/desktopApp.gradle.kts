@@ -15,7 +15,6 @@ dependencies {
     testImplementation(projects.shared.common.tests)
 }
 
-
 compose.desktop {
     application {
         mainClass = "io.kmptemplate.desktop.MainKt"

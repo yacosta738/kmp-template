@@ -17,7 +17,6 @@ internal fun platformModule(): Module {
     }
 }
 
-
 internal val applicationModule = module {
     includes()
 }

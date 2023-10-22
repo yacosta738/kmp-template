@@ -7,8 +7,8 @@ import io.kmptemplate.ui.main.view.GreetingView
 
 @Preview
 @Composable
-fun DefaultPreview() {
-    ApplicationTheme {
+internal fun DefaultPreview() {
+    ApplicationTheme(content = {
         GreetingView("Hello, Android!")
-    }
+    })
 }

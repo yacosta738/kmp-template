@@ -1,6 +1,7 @@
 package io.kmptemplate.buildlogic
 
 import com.android.build.gradle.BaseExtension
+import java.util.*
 import org.gradle.api.Project
 import org.gradle.api.artifacts.ExternalModuleDependency
 import org.gradle.api.artifacts.VersionCatalogsExtension
@@ -17,7 +18,6 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
 import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.util.*
 
 private val Project.libs get() = extensions.getByType<VersionCatalogsExtension>().named("libs")
 

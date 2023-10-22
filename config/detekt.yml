@@ -409,6 +409,7 @@ formatting:
         autoCorrect: true
     NoWildcardImports:
         active: true
+        packagesToUseImportOnDemandProperty: 'org.gradle.kotlin.dsl.*,java.util.*,kotlinx.android.synthetic.**'
     PackageName:
         active: true
         autoCorrect: true
@@ -968,10 +969,11 @@ style:
         ignoreLateinitVar: false
     WildcardImport:
         active: true
-        excludeImports: [ ]
+        excludeImports:
+            - 'java.util.*'
+            - 'org.gradle.kotlin.dsl.*'
 
 Compose:
-    # mrmans0n
     CompositionLocalAllowlist:
         active: true
         allowedCompositionLocals: LocalAccountStrings,LocalExploreStrings,LocalListsStrings,LocalLoginStrings,LocalSocialStrings

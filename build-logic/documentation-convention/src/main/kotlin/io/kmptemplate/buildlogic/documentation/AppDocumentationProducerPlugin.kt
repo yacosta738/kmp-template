@@ -1,14 +1,14 @@
 package io.kmptemplate.buildlogic.documentation
 
 import io.kmptemplate.buildlogic.ConventionPlugin
+import java.time.LocalDateTime.now
+import java.time.format.DateTimeFormatter
 import org.asciidoctor.gradle.jvm.AsciidoctorTask
 import org.gradle.api.Project
 import org.gradle.api.attributes.Category
 import org.gradle.api.attributes.DocsType
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.named
-import java.time.LocalDateTime.now
-import java.time.format.DateTimeFormatter
 
 internal class AppDocumentationProducerPlugin : ConventionPlugin {
     override fun Project.configure() {
@@ -38,8 +38,8 @@ internal class AppDocumentationProducerPlugin : ConventionPlugin {
                     "idprefix" to "",
                     "idseparator" to "-",
                     "revnumber" to revNumber,
-                    "revdate" to revDate
-                )
+                    "revdate" to revDate,
+                ),
             )
         }
 
@@ -52,9 +52,11 @@ internal class AppDocumentationProducerPlugin : ConventionPlugin {
                 attribute(DocsType.DOCS_TYPE_ATTRIBUTE, objects.named("asciidoc-html-folder"))
             }
 
-            outgoing.artifact(asciidoctorTask.map { task ->
-                task.outputDir
-            })
+            outgoing.artifact(
+                asciidoctorTask.map { task ->
+                    task.outputDir
+                },
+            )
         }
     }
 }

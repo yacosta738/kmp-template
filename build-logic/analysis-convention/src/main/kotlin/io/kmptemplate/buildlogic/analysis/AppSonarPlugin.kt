@@ -1,23 +1,21 @@
 package io.kmptemplate.buildlogic.analysis
 
-import io.kmptemplate.buildlogic.ConventionPlugin
 import io.kmptemplate.buildlogic.AppConfiguration
+import io.kmptemplate.buildlogic.ConventionPlugin
+import java.lang.System
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.sonarqube.gradle.SonarExtension
-import java.lang.System
 
 internal class AppSonarPlugin : ConventionPlugin {
-    val githubOrg: String = System.getenv()["GITHUB_ORG"] ?: "yacosta738"
-    val githubProjectUrl = "https://github.com/${githubOrg}/kmp-template"
+    private val githubOrg: String = System.getenv()["GITHUB_ORG"] ?: "yacosta738"
+    private val githubProjectUrl = "https://github.com/$githubOrg/kmp-template"
     private val codeExclusions = listOf(
         "**/R.*",
         "**/R$*.*",
         "**/BuildConfig.*",
     )
-
-    // TODO: Add the real modules here
     private val coverageExclusions = listOf(
         // App
         "**/AppApp.kt",
@@ -57,7 +55,7 @@ internal class AppSonarPlugin : ConventionPlugin {
                     "${AppConfiguration.versionName}_(${AppConfiguration.versionCode})",
                 )
 
-                property("sonar.pullrequest.github.repository", "${githubOrg}/${rootProject.name}")
+                property("sonar.pullrequest.github.repository", "$githubOrg/${rootProject.name}")
                 property("sonar.pullrequest.provider", "GitHub")
                 property("sonar.links.homepage", githubProjectUrl)
                 property("sonar.links.ci", "$githubProjectUrl/actions")

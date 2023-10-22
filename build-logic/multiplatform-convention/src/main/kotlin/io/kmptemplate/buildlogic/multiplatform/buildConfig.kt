@@ -1,8 +1,8 @@
 package io.kmptemplate.buildlogic.multiplatform
 
 import com.esotericsoftware.yamlbeans.YamlReader
-import org.gradle.api.Project
 import java.util.concurrent.atomic.AtomicBoolean
+import org.gradle.api.Project
 
 private typealias YamlBuildConfig = Map<String, FlavorBuildConfig>
 private typealias FlavorBuildConfig = Map<String, ArrayList<LinkedHashMap<String, String>>>

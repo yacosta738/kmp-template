@@ -1,8 +1,16 @@
 package io.kmptemplate.ui.main.sentry
 
-
-import co.touchlab.kermit.*
-import io.sentry.kotlin.multiplatform.*
+import co.touchlab.kermit.DefaultFormatter
+import co.touchlab.kermit.LogWriter
+import co.touchlab.kermit.Logger
+import co.touchlab.kermit.Severity
+import co.touchlab.kermit.platformLogWriter
+import io.sentry.kotlin.multiplatform.Attachment
+import io.sentry.kotlin.multiplatform.Context
+import io.sentry.kotlin.multiplatform.HttpStatusCodeRange
+import io.sentry.kotlin.multiplatform.OptionsConfiguration
+import io.sentry.kotlin.multiplatform.Sentry
+import io.sentry.kotlin.multiplatform.SentryLevel
 import io.sentry.kotlin.multiplatform.protocol.Breadcrumb
 
 expect val DEBUG: Boolean
@@ -32,8 +40,8 @@ fun configureSentryScope() {
         it.setTag("custom-tag", "from shared code")
         it.addAttachment(
             Attachment(
-                "This is a shared text attachment".encodeToByteArray(), "shared.log"
-            )
+                "This is a shared text attachment".encodeToByteArray(), "shared.log",
+            ),
         )
     }
 }
@@ -73,6 +81,9 @@ private class SentryLogger(private val minSeverity: Severity) : LogWriter() {
     }
 }
 
+private const val MIN_CODE_ERROR = 400
+
+private const val MAX_CODE_ERROR = 599
 
 /** Returns a shared options configuration */
 private fun optionsConfiguration(): OptionsConfiguration {
@@ -83,7 +94,7 @@ private fun optionsConfiguration(): OptionsConfiguration {
         it.attachScreenshot = true
         it.attachViewHierarchy = true
         it.debug = DEBUG
-        it.failedRequestStatusCodes = listOf(HttpStatusCodeRange(400, 599))
+        it.failedRequestStatusCodes = listOf(HttpStatusCodeRange(MIN_CODE_ERROR, MAX_CODE_ERROR))
         it.failedRequestTargets = listOf("httpbin.org")
         it.beforeBreadcrumb = { breadcrumb ->
             breadcrumb.message = "Add message before every breadcrumb"

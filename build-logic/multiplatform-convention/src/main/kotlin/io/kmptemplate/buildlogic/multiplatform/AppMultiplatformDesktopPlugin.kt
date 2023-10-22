@@ -61,13 +61,13 @@ internal class AppMultiplatformDesktopPlugin : ConventionPlugin {
     }
 
     private fun KotlinMultiplatformExtension.configureDesktopMultiplatform(project: Project) {
+        println("⚪ Configuring multiplatform desktop for ${project.name}")
         jvm("desktop")
         configureSourceSets()
     }
 
     private fun Project.kspDependencies() {
         dependencies {
-
         }
     }
 }
