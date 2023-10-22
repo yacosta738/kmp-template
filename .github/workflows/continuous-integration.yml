@@ -22,7 +22,7 @@ permissions:
 
 jobs:
     validation:
-        name: Validation
+        name: 👀 Validation
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout
@@ -32,7 +32,7 @@ jobs:
             -   name: Validate Gradle wrapper
                 uses: gradle/wrapper-validation-action@v1.1.0
     compile:
-        name: Assembling
+        name: 🛠️ Assembling
         runs-on: ubuntu-latest
         if: github.event_name == 'pull_request'
         steps:
@@ -79,7 +79,7 @@ jobs:
                         hooray
                         rocket
     tests:
-        name: Tests
+        name: 🧪 Tests
         needs: compile
         runs-on: ubuntu-latest
 
