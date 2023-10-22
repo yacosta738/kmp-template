@@ -23,7 +23,7 @@ asciidoctor = "4.0.0-alpha.1"
 gradle-git-properties = "2.4.1"
 docker-plugin = "9.3.3"
 orbit = "6.1.0"
-sentry = "6.30.0"
+sentry = "6.32.0"
 # Utilities
 apache-commons = "1.10.0"
 kotlin-logging = "3.0.5"
