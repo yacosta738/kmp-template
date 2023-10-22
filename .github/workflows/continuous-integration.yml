@@ -60,7 +60,7 @@ jobs:
                     token: ${{ secrets.DIAWI_TOKEN }}
                     file: ./apps/androidApp/build/outputs/apk/debug/androidApp-debug.apk
             -   name: 🟢 Post comment with Diawi link
-                uses: peter-evans/create-or-update-comment@v3.0.2
+                uses: peter-evans/create-or-update-comment@v3.1.0
                 with:
                     issue-number: ${{ github.event.pull_request.number }}
                     body: |
@@ -131,7 +131,7 @@ jobs:
                     flags: unittests
                     verbose: true
             -   name: 🟡 Post comment with build scan URL as PR comment
-                uses: peter-evans/create-or-update-comment@v3.0.2
+                uses: peter-evans/create-or-update-comment@v3.1.0
                 if: github.event_name == 'pull_request' && failure()
                 with:
                     issue-number: ${{ format('PR-{0}', github.event.pull_request.number) }}
