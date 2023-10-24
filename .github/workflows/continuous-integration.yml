@@ -215,7 +215,7 @@ jobs:
             -   name: 🏗️ 📦 Build package
                 run: ./gradlew assemble --scan -x test -x integrationTest
             -   name: 🟢 Setup Node.js
-                uses: actions/setup-node@v3
+                uses: actions/setup-node@v4
                 with:
                     node-version: 'lts/*'
             -   name: 🧩 Add plugin for conventional commits
