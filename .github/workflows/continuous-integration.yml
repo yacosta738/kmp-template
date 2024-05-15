@@ -124,7 +124,7 @@ jobs:
                     path: '**/build/reports/kover/report.xml'
                     retention-days: 1
             -   name: 🟢 ➡️ 🧪 Upload report to Codecov
-                uses: codecov/codecov-action@v3.1.4
+                uses: codecov/codecov-action@v3.1.6
                 with:
                     token: ${{ secrets.CODECOV_TOKEN }}
                     files: build/reports/kover/report.xml
