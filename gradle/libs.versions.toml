@@ -3,7 +3,7 @@
 kotlin = "1.9.10"
 coroutines = "1.7.3"
 dokka = "1.9.10"
-detekt = "1.23.1"
+detekt = "1.23.7"
 sonarqubeGradlePlugin = "4.4.0.3356"
 jacoco = "0.8.10"
 compose = "1.5.3"
