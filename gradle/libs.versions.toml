@@ -1,12 +1,12 @@
 [versions]
 
-kotlin = "1.9.10"
-coroutines = "1.7.3"
+kotlin = "1.9.25"
+coroutines = "1.9.0"
 dokka = "1.9.10"
 detekt = "1.23.1"
 sonarqubeGradlePlugin = "4.4.0.3356"
 jacoco = "0.8.10"
-compose = "1.5.3"
+compose = "1.7.0"
 destinations = "1.9.54"
 #Testing
 mockmp = "1.15.0"
@@ -35,11 +35,11 @@ kotlin-logging = "3.0.5"
 # Gradle Plugins
 gradle-android = { module = "com.android.tools.build:gradle", version = "8.1.2" }
 gradle-complete-kotlin = { module = "com.louiscad.complete-kotlin:plugin", version = "1.1.0" }
-gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version = "0.7.4" }
+gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version = "0.8.3" }
 gradle-sentry = { module = "io.sentry:sentry-android-gradle-plugin", version = "3.14.0" }
 gradle-buildconfig = { module = "com.github.gmazzo.buildconfig:plugin", version = "4.1.2" }
 gradle-kotest = { module = "io.kotest:kotest-framework-multiplatform-plugin-gradle", version.ref = "kotest" }
-gradle-ksp = { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin", version = "1.9.10-1.0.13" }
+gradle-ksp = { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin", version = "1.9.25-1.0.20" }
 gradle-compose = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose" }
 gradle-mockmp = { module = "org.kodein.mock:mockmp-gradle-plugin", version.ref = "mockmp" }
 gradle-updates = { module = "com.github.ben-manes:gradle-versions-plugin", version = "0.48.0" }
@@ -52,11 +52,11 @@ gradle-sonarqube = { module = "org.sonarsource.scanner.gradle:sonarqube-gradle-p
 
 # Kotlin
 kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
-kotlin-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.6" }
-kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version = "1.6.0" }
+kotlin-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.8" }
+kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version = "1.7.3" }
 
 # Compose
-compose-compiler = { module = "org.jetbrains.compose.compiler:compiler", version = "1.5.2" }
+compose-compiler = { module = "org.jetbrains.compose.compiler:compiler", version = "1.5.15" }
 compose-material3-windowsize = { module = "dev.chrisbanes.material3:material3-window-size-class-multiplatform", version = "0.3.1" }
 
 
