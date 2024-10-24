@@ -88,7 +88,7 @@ detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", 
 sentry = { module = "io.sentry:sentry-android-core", version.ref = "sentry" }
 sentry-apollo = { module = "io.sentry:sentry-apollo-3", version.ref = "sentry" }
 sentry-compose = { module = "io.sentry:sentry-compose-android", version.ref = "sentry" }
-sentry-multiplatform = { module = "io.sentry:sentry-kotlin-multiplatform", version = "0.2.1" }
+sentry-multiplatform = { module = "io.sentry:sentry-kotlin-multiplatform", version = "0.10.0" }
 
 # AndroidX
 androidx-activity = { module = "androidx.activity:activity-compose", version = "1.8.0" }
