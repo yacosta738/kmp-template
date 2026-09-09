@@ -1,6 +1,6 @@
 [versions]
 
-kotlin = "1.9.10"
+kotlin = "2.4.20"
 coroutines = "1.7.3"
 dokka = "1.9.10"
 detekt = "1.23.1"
@@ -39,7 +39,7 @@ gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version =
 gradle-sentry = { module = "io.sentry:sentry-android-gradle-plugin", version = "3.14.0" }
 gradle-buildconfig = { module = "com.github.gmazzo.buildconfig:plugin", version = "4.1.2" }
 gradle-kotest = { module = "io.kotest:kotest-framework-multiplatform-plugin-gradle", version.ref = "kotest" }
-gradle-ksp = { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin", version = "1.9.10-1.0.13" }
+gradle-ksp = { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin", version = "2.3.12" }
 gradle-compose = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose" }
 gradle-mockmp = { module = "org.kodein.mock:mockmp-gradle-plugin", version.ref = "mockmp" }
 gradle-updates = { module = "com.github.ben-manes:gradle-versions-plugin", version = "0.48.0" }
